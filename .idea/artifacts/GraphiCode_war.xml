@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="GraphiCode:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>GraphiCode</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="GraphiCode-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="GraphiCode:war exploded" />
+    </root>
+  </artifact>
+</component>
