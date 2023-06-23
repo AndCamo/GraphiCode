@@ -12,7 +12,7 @@ public class ConnectionPool {
     static final String PASS = "Andsql10";
 
 
-
+    //TEST CONNECTION POOL
     private static Connection conn = null;
     private static Statement stmt = null;
 
