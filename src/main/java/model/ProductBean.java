@@ -10,7 +10,8 @@ public class ProductBean {
         this.reviews = new ArrayList<>();
     };
 
-    public ProductBean(String code, String name, String category, String image, String description, double price){
+    public ProductBean(String code, String name, String category,
+                       String image, String description, double price){
         this.code = code;
         this.name = name;
         this.category = category;

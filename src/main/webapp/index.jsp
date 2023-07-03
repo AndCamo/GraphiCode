@@ -3,11 +3,12 @@
 <html>
 <head>
     <title>JSP - Hello World</title>
+    <link type="text/css" rel="stylesheet" href="style/main-style.css">
 </head>
 <body>
-<h1><%= "Hello World!" %>
-</h1>
-<br/>
-<a href="hello-servlet">Hello Servlet</a>
+    <%@ include file="./navbar.jsp"%>
+    <div class="container">
+        <h1 style="color: coral"> TEST </h1>
+    </div>
 </body>
 </html>

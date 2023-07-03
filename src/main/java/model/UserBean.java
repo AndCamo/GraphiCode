@@ -8,9 +8,10 @@ import java.time.LocalDate;
 
 public class UserBean {
 
-    public UserBean() {};
+    public UserBean() {}
 
-    public UserBean(String name, String surname, String eMail, String password, String phoneNumber, String nation, String birthDate) throws NoSuchAlgorithmException {
+    public UserBean(String name, String surname, String eMail, String password,
+                    String phoneNumber, String nation, String birthDate) throws NoSuchAlgorithmException {
         this.name = name;
         this.surname = surname;
         this.eMail = eMail;
@@ -19,9 +20,10 @@ public class UserBean {
         this.phoneNumber = phoneNumber;
         setBirthDate(birthDate);
         this.admin = false;
-    };
+    }
 
-    public UserBean(int id, String name, String surname, String eMail, String password, String phoneNumber, String nation, String birthDate) throws NoSuchAlgorithmException {
+    public UserBean(int id, String name, String surname, String eMail, String password,
+                    String phoneNumber, String nation, String birthDate) throws NoSuchAlgorithmException {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -31,7 +33,7 @@ public class UserBean {
         this.phoneNumber = phoneNumber;
         setBirthDate(birthDate);
         this.admin = false;
-    };
+    }
 
     public int getId() {
         return id;
@@ -117,7 +119,7 @@ public class UserBean {
         this.admin = admin;
     }
 
-    private static int lastId = 0;
+    
     private int id;
     private String name, surname, eMail, password, phoneNumber, nation;
     private boolean admin;

@@ -2,7 +2,7 @@ package model;
 
 public class OrderItemBean {
 
-    public OrderItemBean() {};
+    public OrderItemBean() {}
 
     public OrderItemBean(int id, int orderNumber, int quantity, String productCode, double price){
         this.id = id;
@@ -10,14 +10,14 @@ public class OrderItemBean {
         this.quantity = quantity;
         this.productCode = productCode;
         this.price = price;
-    };
+    }
 
     public OrderItemBean(int orderNumber, int quantity, String productCode, double price){
         this.orderNumber = orderNumber;
         this.quantity = quantity;
         this.productCode = productCode;
         this.price = price;
-    };
+    }
 
     public int getId() {
         return id;

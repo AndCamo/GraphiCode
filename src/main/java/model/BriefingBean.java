@@ -7,7 +7,8 @@ public class BriefingBean {
 
     public BriefingBean() {};
 
-    public BriefingBean(int userId, String productCode, String target, String style, String goals, String node, List<String> colorPalette) {
+    public BriefingBean(int userId, String productCode, String target, String style,
+                        String goals, String node, List<String> colorPalette) {
         this.userId = userId;
         this.productCode = productCode;
         this.target = target;
@@ -17,7 +18,8 @@ public class BriefingBean {
         this.colorPalette = colorPalette;
     }
 
-    public BriefingBean(int id, int userId, String productCode, String target, String style, String goals, String node, List<String> colorPalette) {
+    public BriefingBean(int id, int userId, String productCode, String target,
+                        String style, String goals, String node, List<String> colorPalette) {
         this.userId = userId;
         this.productCode = productCode;
         this.target = target;

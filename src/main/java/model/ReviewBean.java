@@ -3,7 +3,7 @@ package model;
 public class ReviewBean {
 
 
-    public ReviewBean() {};
+    public ReviewBean() {}
 
     public ReviewBean(int id, int userId, int starNumber, String productCode, String reviewContent){
         this.id = id;
