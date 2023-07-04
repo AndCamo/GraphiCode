@@ -11,7 +11,7 @@ public class UserBean {
     public UserBean() {}
 
     public UserBean(String name, String surname, String eMail, String password,
-                    String phoneNumber, String nation, String birthDate) throws NoSuchAlgorithmException {
+                    String phoneNumber, String nation, String birthDate){
         this.name = name;
         this.surname = surname;
         this.eMail = eMail;
@@ -23,7 +23,7 @@ public class UserBean {
     }
 
     public UserBean(int id, String name, String surname, String eMail, String password,
-                    String phoneNumber, String nation, String birthDate) throws NoSuchAlgorithmException {
+                    String phoneNumber, String nation, String birthDate){
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -95,11 +95,16 @@ public class UserBean {
         return password;
     }
 
-    public void setPassword(String password) throws NoSuchAlgorithmException {
-        MessageDigest digest = MessageDigest.getInstance("SHA-1");
-        digest.reset();
-        digest.update(password.getBytes(StandardCharsets.UTF_8));
-        this.password = String.format("%040x", new BigInteger(1, digest.digest()));
+    public void setPassword(String password){
+        MessageDigest digest = null;
+        try {
+            digest = MessageDigest.getInstance("SHA-1");
+            digest.reset();
+            digest.update(password.getBytes(StandardCharsets.UTF_8));
+            this.password = String.format("%040x", new BigInteger(1, digest.digest()));
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public boolean checkPassword(String password) throws NoSuchAlgorithmException {

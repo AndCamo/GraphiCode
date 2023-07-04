@@ -16,10 +16,20 @@ body {
     z-index: 1;
 }
 
-.container{
+.main-container{
     width: 70%;
-    max-width: 1280px;
-    height: 2500px; /*TEMPORANEO PER TESTARE LO SCROLL*/
     font-size:30px;
     margin: 10vh auto 0 auto;
+}
+
+@media all and  (max-width: 1024px) {
+    .main-container{
+        width: 100%;
+    }
+}
+
+@media screen and (max-height: 602px) {
+    .main-container{
+        margin-top: 20vh;
+    }
 }

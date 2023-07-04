@@ -9,7 +9,7 @@ CREATE TABLE Utente (
     cognome varchar(40) not null,
     eMail varchar(40) not null,
     passkey varchar(40) not null,
-    telefono integer not null,
+    telefono varchar(15) not null,
     data_di_nascita date not null,
     nazione varchar(50) not null,
     isAdmin VARCHAR(5) default 'false'

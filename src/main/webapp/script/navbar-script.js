@@ -18,19 +18,22 @@ window.onscroll = function() {
         if (prevScrollpos > currentScrollPos) {
             document.getElementById("navbar").style.top = "0";
         } else {
-            var heightToSet = ("-" + originalHeight);
-            document.getElementById("navbar").style.top = heightToSet;
+            document.getElementById("navbar").style.top = ("-" + originalHeight);
         }
     }
     prevScrollpos = currentScrollPos;
 }
 
-function blockScrolling() {
+
+
+function showMenu() {
     if(document.getElementById("nav").checked) {
         document.getElementsByTagName("body")[0].style.overflow = "hidden";
+        $(".nav-container").fadeIn("fast");
         document.getElementById("navbar-menu-icon").src="./assets/close.png";
     } else {
         document.getElementsByTagName("body")[0].style.overflow = "auto";
+        $(".nav-container").fadeOut("fast");
         document.getElementById("navbar-menu-icon").src="./assets/menu.png";
     }
 }

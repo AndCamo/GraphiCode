@@ -68,12 +68,12 @@ nav ul li a:hover {
     display: none;
     top: 0;
     left: 0;
+    margin-top: 10vh;
     height: 100%;
     width: 100%;
-    z-index: -1;
+    z-index: 9999;
     background: #141414;
-    opacity: 0;
-    transition: all 0.1s step-end;
+    opacity: 1;
 }
 .nav-container ul {
     position: absolute;
@@ -100,23 +100,10 @@ nav ul li a:hover {
       text-decoration: none;
       letter-spacing: 0.15em;
       padding: 10px 25px;
-      opacity: 0;
+      opacity: 1;
       color: #fff;
       font-size: 24px;
       transform: translateY(-20px);
-      transition: all 0.2s linear;
-}
-
-#nav:checked ~ .nav-container {
-    margin-top: 10vh; /*CAMBIARE QUA RISPETTO L'ALTEZZA DELLA*/
-    z-index: 9999;
-    opacity: 1;
-    display: block;
-}
-
-#nav:checked ~ .nav-container ul li a {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .hidden {
@@ -124,12 +111,12 @@ nav ul li a:hover {
 }
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
     .nav-open{
         left: 3%;
     }
     #nav:checked + .nav-open {
-        left: 4%;
+        left: 3%;
         top: 20px;
     }
 
@@ -145,7 +132,12 @@ nav ul li a:hover {
         left: 3%;
         height: 40%;
      }
-} 
+}
+@media screen and (max-height: 602px) {
+    #navbar{
+        height: 20vh;
+    }
+}
 
 input,
 textarea,
