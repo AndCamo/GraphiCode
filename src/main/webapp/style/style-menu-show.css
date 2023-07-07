@@ -20,7 +20,7 @@ img#navbar-logo {
     height: 100%;
  }
  
- img#navbar-user {
+ img#navbar-cart {
     position: absolute;
     right: 20%;
     width: auto;
@@ -31,7 +31,7 @@ img#navbar-logo {
     transform: translateY(-50%);
  }
 
- img#navbar-user:hover {
+ img#navbar-cart:hover {
     width: auto;
     height: 45%;
  }
@@ -120,7 +120,7 @@ nav ul li a:hover {
         top: 20px;
     }
 
-    img#navbar-user {
+    img#navbar-cart {
         top: 50%;
         transform: translateY(-50%);
         right: 3%;

@@ -1,0 +1,52 @@
+.title-container{
+    padding: 25px;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    margin: 15vh auto 0 auto;
+    color: #141414;
+    background-color: white;
+    border-radius: 1rem;
+    border: 4px solid #E5383B;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+.action-container{
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    margin: 2vh auto 0 auto;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.action-card{
+    background-color: white;
+    padding: 25px;
+    border-radius: 1rem;
+    display: flex;
+    height: fit-content;
+    transition: all .2s;
+}
+
+.action-card:hover{
+    border: 4px solid #E5383B;
+    transition: all .2s,-webkit-box-shadow .2s;
+}
+
+.image-card{
+    margin: 0;
+    max-width: 20%;
+    max-height: 20%;
+    display: block;
+    object-fit: contain;
+}
+
+.text-card{
+    font-family: 'Roboto Mono', monospace;
+    margin: auto 3vw;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+    font-size: 1.5rem;
+}

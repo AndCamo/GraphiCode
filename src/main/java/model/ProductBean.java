@@ -3,6 +3,7 @@ package model;
 import java.awt.geom.Line2D;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class ProductBean {
 
@@ -10,6 +11,18 @@ public class ProductBean {
         this.reviews = new ArrayList<>();
     };
 
+
+    public ProductBean(String name, String category,
+                       String image, String description, double price){
+        this.code = this.generateCode(name);
+        this.name = name;
+        this.category = category;
+        this.image = image;
+        this.description = description;
+        this.price = price;
+        this.sale = 0;
+        this.reviews = new ArrayList<>();
+    }
     public ProductBean(String code, String name, String category,
                        String image, String description, double price){
         this.code = code;
@@ -30,6 +43,12 @@ public class ProductBean {
         this.code = code;
     }
 
+    public String generateCode(String name){
+        int numbCode =  (int) Math.floor(Math.random() *(901) + 100);
+        String subCode = name.substring(0, 2).toUpperCase();
+
+        return subCode.concat(Integer.toString(numbCode));
+    }
     public String getName() {
         return name;
     }

@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>GraphiCode</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="style/main-style.css">
     <link rel="stylesheet" type="text/css" href="./style/style-menu-show.css">

@@ -2,6 +2,8 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/database/crea_db.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/model/CartDAO.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/model/ProductDAO.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/model/UserDAO.java" dialect="GenericSQL" />
   </component>
 </project>

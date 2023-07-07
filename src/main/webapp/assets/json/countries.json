@@ -1,0 +1,587 @@
+[
+  {
+    "nome": "Afghanistan"
+  },
+  {
+    "nome": "Albania"
+  },
+  {
+    "nome": "Algeria"
+  },
+  {
+    "nome": "Andorra"
+  },
+  {
+    "nome": "Angola"
+  },
+  {
+    "nome": "Antigua e Barbuda"
+  },
+  {
+    "nome": "Arabia Saudita"
+  },
+  {
+    "nome": "Argentina"
+  },
+  {
+    "nome": "Armenia"
+  },
+  {
+    "nome": "Australia"
+  },
+  {
+    "nome": "Austria"
+  },
+  {
+    "nome": "Azerbaigian"
+  },
+  {
+    "nome": "Bahamas"
+  },
+  {
+    "nome": "Bahrein"
+  },
+  {
+    "nome": "Bangladesh"
+  },
+  {
+    "nome": "Barbados"
+  },
+  {
+    "nome": "Belgio"
+  },
+  {
+    "nome": "Belize"
+  },
+  {
+    "nome": "Benin"
+  },
+  {
+    "nome": "Bhutan"
+  },
+  {
+    "nome": "Bielorussia"
+  },
+  {
+    "nome": "Birmania"
+  },
+  {
+    "nome": "Bolivia"
+  },
+  {
+    "nome": "Bosnia ed Erzegovina"
+  },
+  {
+    "nome": "Botswana"
+  },
+  {
+    "nome": "Brasile"
+  },
+  {
+    "nome": "Brunei"
+  },
+  {
+    "nome": "Bulgaria"
+  },
+  {
+    "nome": "Burkina Faso"
+  },
+  {
+    "nome": "Burundi"
+  },
+  {
+    "nome": "Cambogia"
+  },
+  {
+    "nome": "Camerun"
+  },
+  {
+    "nome": "Canada"
+  },
+  {
+    "nome": "Capo Verde"
+  },
+  {
+    "nome": "Ciad"
+  },
+  {
+    "nome": "Cile"
+  },
+  {
+    "nome": "Cina"
+  },
+  {
+    "nome": "Cipro"
+  },
+  {
+    "nome": "Città del Vaticano"
+  },
+  {
+    "nome": "Colombia"
+  },
+  {
+    "nome": "Comore"
+  },
+  {
+    "nome": "Corea del Nord"
+  },
+  {
+    "nome": "Corea del Sud"
+  },
+  {
+    "nome": "Costa d'Avorio"
+  },
+  {
+    "nome": "Costa Rica"
+  },
+  {
+    "nome": "Croazia"
+  },
+  {
+    "nome": "Cuba"
+  },
+  {
+    "nome": "Danimarca"
+  },
+  {
+    "nome": "Dominica"
+  },
+  {
+    "nome": "Ecuador"
+  },
+  {
+    "nome": "Egitto"
+  },
+  {
+    "nome": "El Salvador"
+  },
+  {
+    "nome": "Emirati Arabi Uniti"
+  },
+  {
+    "nome": "Eritrea"
+  },
+  {
+    "nome": "Estonia"
+  },
+  {
+    "nome": "Etiopia"
+  },
+  {
+    "nome": "Fiji"
+  },
+  {
+    "nome": "Filippine"
+  },
+  {
+    "nome": "Finlandia"
+  },
+  {
+    "nome": "Francia"
+  },
+  {
+    "nome": "Gabon"
+  },
+  {
+    "nome": "Gambia"
+  },
+  {
+    "nome": "Georgia"
+  },
+  {
+    "nome": "Germania"
+  },
+  {
+    "nome": "Ghana"
+  },
+  {
+    "nome": "Giappone"
+  },
+  {
+    "nome": "Giordania"
+  },
+  {
+    "nome": "Grecia"
+  },
+  {
+    "nome": "Grenada"
+  },
+  {
+    "nome": "Guatemala"
+  },
+  {
+    "nome": "Guinea"
+  },
+  {
+    "nome": "Guinea-Bissau"
+  },
+  {
+    "nome": "Guinea Equatoriale"
+  },
+  {
+    "nome": "Guyana"
+  },
+  {
+    "nome": "Haiti"
+  },
+  {
+    "nome": "Honduras"
+  },
+  {
+    "nome": "India"
+  },
+  {
+    "nome": "Indonesia"
+  },
+  {
+    "nome": "Iran"
+  },
+  {
+    "nome": "Iraq"
+  },
+  {
+    "nome": "Irlanda"
+  },
+  {
+    "nome": "Islanda"
+  },
+  {
+    "nome": "Isole Marshall"
+  },
+  {
+    "nome": "Isole Salomone"
+  },
+  {
+    "nome": "Israele"
+  },
+  {
+    "nome": "Italia"
+  },
+  {
+    "nome": "Jamaica"
+  },
+  {
+    "nome": "Giappone"
+  },
+  {
+    "nome": "Giordania"
+  },
+  {
+    "nome": "Kazakistan"
+  },
+  {
+    "nome": "Kenya"
+  },
+  {
+    "nome": "Kirghizistan"
+  },
+  {
+    "nome": "Kiribati"
+  },
+  {
+    "nome": "Kuwait"
+  },
+  {
+    "nome": "Laos"
+  },
+  {
+    "nome": "Lesotho"
+  },
+  {
+    "nome": "Lettonia"
+  },
+  {
+    "nome": "Libano"
+  },
+  {
+    "nome": "Liberia"
+  },
+  {
+    "nome": "Libia"
+  },
+  {
+    "nome": "Liechtenstein"
+  },
+  {
+    "nome": "Lituania"
+  },
+  {
+    "nome": "Lussemburgo"
+  },
+  {
+    "nome": "Macedonia del Nord"
+  },
+  {
+    "nome": "Madagascar"
+  },
+  {
+    "nome": "Malawi"
+  },
+  {
+    "nome": "Maldive"
+  },
+  {
+    "nome": "Malesia"
+  },
+  {
+    "nome": "Mali"
+  },
+  {
+    "nome": "Malta"
+  },
+  {
+    "nome": "Marocco"
+  },
+  {
+    "nome": "Mauritania"
+  },
+  {
+    "nome": "Mauritius"
+  },
+  {
+    "nome": "Messico"
+  },
+  {
+    "nome": "Micronesia"
+  },
+  {
+    "nome": "Moldavia"
+  },
+  {
+    "nome": "Monaco"
+  },
+  {
+    "nome": "Mongolia"
+  },
+  {
+    "nome": "Montenegro"
+  },
+  {
+    "nome": "Mozambico"
+  },
+  {
+    "nome": "Namibia"
+  },
+  {
+    "nome": "Nauru"
+  },
+  {
+    "nome": "Nepal"
+  },
+  {
+    "nome": "Nicaragua"
+  },
+  {
+    "nome": "Niger"
+  },
+  {
+    "nome": "Nigeria"
+  },
+  {
+    "nome": "Norvegia"
+  },
+  {
+    "nome": "Nuova Zelanda"
+  },
+  {
+    "nome": "Oman"
+  },
+  {
+    "nome": "Paesi Bassi"
+  },
+  {
+    "nome": "Pakistan"
+  },
+  {
+    "nome": "Palau"
+  },
+  {
+    "nome": "Panama"
+  },
+  {
+    "nome": "Papua Nuova Guinea"
+  },
+  {
+    "nome": "Paraguay"
+  },
+  {
+    "nome": "Perù"
+  },
+  {
+    "nome": "Polonia"
+  },
+  {
+    "nome": "Portogallo"
+  },
+  {
+    "nome": "Qatar"
+  },
+  {
+    "nome": "Regno Unito"
+  },
+  {
+    "nome": "Repubblica Ceca"
+  },
+  {
+    "nome": "Repubblica Centrafricana"
+  },
+  {
+    "nome": "Repubblica del Congo"
+  },
+  {
+    "nome": "Repubblica Democratica del Congo"
+  },
+  {
+    "nome": "Repubblica Dominicana"
+  },
+  {
+    "nome": "Romania"
+  },
+  {
+    "nome": "Ruanda"
+  },
+  {
+    "nome": "Russia"
+  },
+  {
+    "nome": "Saint Kitts e Nevis"
+  },
+  {
+    "nome": "Saint Vincent e Grenadine"
+  },
+  {
+    "nome": "Samoa"
+  },
+  {
+    "nome": "San Marino"
+  },
+  {
+    "nome": "Santa Lucia"
+  },
+  {
+    "nome": "São Tomé e Príncipe"
+  },
+  {
+    "nome": "Senegal"
+  },
+  {
+    "nome": "Serbia"
+  },
+  {
+    "nome": "Seychelles"
+  },
+  {
+    "nome": "Sierra Leone"
+  },
+  {
+    "nome": "Singapore"
+  },
+  {
+    "nome": "Siria"
+  },
+  {
+    "nome": "Slovacchia"
+  },
+  {
+    "nome": "Slovenia"
+  },
+  {
+    "nome": "Somalia"
+  },
+  {
+    "nome": "Spagna"
+  },
+  {
+    "nome": "Sri Lanka"
+  },
+  {
+    "nome": "Stati Federati di Micronesia"
+  },
+  {
+    "nome": "Sudafrica"
+  },
+  {
+    "nome": "Sudan"
+  },
+  {
+    "nome": "Sudan del Sud"
+  },
+  {
+    "nome": "Svezia"
+  },
+  {
+    "nome": "Svizzera"
+  },
+  {
+    "nome": "Suriname"
+  },
+  {
+    "nome": "Swaziland"
+  },
+  {
+    "nome": "Tagikistan"
+  },
+  {
+    "nome": "Tanzania"
+  },
+  {
+    "nome": "Thailandia"
+  },
+  {
+    "nome": "Timor Est"
+  },
+  {
+    "nome": "Togo"
+  },
+  {
+    "nome": "Tonga"
+  },
+  {
+    "nome": "Trinidad e Tobago"
+  },
+  {
+    "nome": "Tunisia"
+  },
+  {
+    "nome": "Turchia"
+  },
+  {
+    "nome": "Turkmenistan"
+  },
+  {
+    "nome": "Tuvalu"
+  },
+  {
+    "nome": "Ucraina"
+  },
+  {
+    "nome": "Uganda"
+  },
+  {
+    "nome": "Ungheria"
+  },
+  {
+    "nome": "Uruguay"
+  },
+  {
+    "nome": "Uzbekistan"
+  },
+  {
+    "nome": "Vanuatu"
+  },
+  {
+    "nome": "Venezuela"
+  },
+  {
+    "nome": "Vietnam"
+  },
+  {
+    "nome": "Yemen"
+  },
+  {
+    "nome": "Zambia"
+  },
+  {
+    "nome": "Zimbabwe"
+  }
+]

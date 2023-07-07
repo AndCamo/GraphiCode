@@ -35,4 +35,31 @@ public class UserDAO {
             ResultSet rs = ps.executeQuery();
             return rs.next();
     }
+
+    public UserBean doRetrieveByEmailAndPassword(String email, String password) throws SQLException {
+            Connection connection = ConnectionPool.getConnection();
+            PreparedStatement ps = connection.prepareStatement(
+                    "SELECT * " +
+                            "FROM Utente " +
+                            "WHERE eMail=? AND passkey=SHA1(?)");
+            ps.setString(1, email);
+            ps.setString(2, password);
+            ResultSet rs = ps.executeQuery();
+            System.out.println("AGGIORNATO");
+            if (rs.next()){
+                    UserBean retrievedUser = new UserBean();
+                    retrievedUser.setId(rs.getInt("id"));
+                    retrievedUser.setName(rs.getString("nome"));
+                    retrievedUser.setSurname(rs.getString("cognome"));
+                    retrievedUser.seteMail(rs.getString("eMail"));
+                    retrievedUser.setPassword(rs.getString("passkey"));
+                    retrievedUser.setPhoneNumber(rs.getString("telefono"));
+                    retrievedUser.setBirthDate(rs.getDate("data_di_nascita").toString());
+                    retrievedUser.setNation(rs.getString("nazione"));
+                    retrievedUser.setAdmin(rs.getString("isAdmin").equals("true"));
+
+                    return retrievedUser;
+            }
+            return null;
+    }
 }

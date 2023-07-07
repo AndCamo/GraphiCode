@@ -16,12 +16,9 @@ CREATE TABLE Utente (
 );
 
 CREATE TABLE Carrello (
-    id integer not null auto_increment,
+    id integer not null  primary key auto_increment,
     id_utente integer not null,
-    costo_totale double not null default '0.00',
-    numero_articoli integer not null default '0',
-    FOREIGN KEY (id_utente) REFERENCES utente(id) ON DELETE CASCADE,
-    PRIMARY KEY (id, id_utente)
+    numero_articoli integer not null default '0'
 );
 
 CREATE TABLE Prodotto (

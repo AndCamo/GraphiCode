@@ -16,11 +16,17 @@
                 %>
                     <li><a href="login-page.jsp">Log in</a><a href="registration-page.jsp">Sign up</a></li>
                 <% } else {%>
-                    <li><a href="login-page.jsp">Profilo</a><a href="registration-page.jsp">Log out</a></li>
+                    <li><a href=""><%= profile.getName()%>, <%= profile.getId()%></a><a onclick="location.href='${pageContext.request.contextPath}/logout'">Log out</a></li>
                 <%}%>
             </ul>
         </div>
     </nav>
     <img id="navbar-logo" src="./assets/Pittogramma.png">
-    <img id="navbar-user" src="./assets/cart3.png">
+    <%
+        if(profile != null && profile.isAdmin()){
+    %>
+        <img id="navbar-cart" onclick="location.href='${pageContext.request.contextPath}/check-in?type=dashboard'" src="./assets/setting.png">
+    <%} else {%>
+        <img id="navbar-cart" onclick="location.href='cart.jsp'" src="./assets/cart3.png">
+    <%}%>
 </div>

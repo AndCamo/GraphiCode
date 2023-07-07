@@ -7,20 +7,17 @@ public class CartBean {
 
     public CartBean() {
         productCount = 0;
-        totalCost = 0.0;
     };
     public CartBean(int id, int userId) {
         this.id = id;
         this.userId = userId;
         productCount = 0;
-        totalCost = 0.0;
         productList = new ArrayList<>();
     };
 
     public CartBean(int userId) {
         this.userId = userId;
         productCount = 0;
-        totalCost = 0.0;
         productList = new ArrayList<>();
     };
 
@@ -46,14 +43,6 @@ public class CartBean {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public double getTotalCost() {
-        return totalCost;
-    }
-
-    public void setTotalCost(double totalCost) {
-        this.totalCost = totalCost;
     }
 
     public List<CartItemBean> getProductList() {
@@ -96,6 +85,5 @@ public class CartBean {
 
 
     private int id, userId, productCount;
-    private double totalCost;
     private List<CartItemBean> productList;
 }
