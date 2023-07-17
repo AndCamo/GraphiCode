@@ -5,6 +5,8 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class UserBean {
 
@@ -76,7 +78,7 @@ public class UserBean {
     }
 
     public String getNation() {
-        return nation;
+        return (this.nation != null) ? this.nation : "";
     }
 
     public void setNation(String nation) {
@@ -84,11 +86,14 @@ public class UserBean {
     }
 
     public String getBirthDate() {
-        return birthDate.toString();
+        return (this.birthDate != null) ? birthDate.toString() : "";
     }
 
     public void setBirthDate(String birthDate) {
-        this.birthDate = LocalDate.parse(birthDate);
+        if (!birthDate.isEmpty() && birthDate != null)
+            this.birthDate = LocalDate.parse(birthDate);
+        else
+            this.birthDate = null;
     }
 
     public String getPassword() {
@@ -107,6 +112,10 @@ public class UserBean {
         }
     }
 
+    public void setHashedPassword(String hashedPassword){
+        this.password = hashedPassword;
+    }
+
     public boolean checkPassword(String password) throws NoSuchAlgorithmException {
         MessageDigest digest = MessageDigest.getInstance("SHA-1");
         digest.reset();
@@ -122,6 +131,51 @@ public class UserBean {
 
     public void setAdmin(boolean admin) {
         this.admin = admin;
+    }
+
+    public boolean checkUserData(){
+        final Pattern phone_regex = Pattern.compile("^\\d{10}$");
+        final Pattern name_regex = Pattern.compile("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$");
+        final Pattern nation_regex = Pattern.compile("^[a-zA-ZÀ-ÿ ]*$");
+        final Pattern date_regex = Pattern.compile("^\\d{4}\\-(0?[1-9]|1[012])\\-(0?[1-9]|[12][0-9]|3[01])$");
+
+        Matcher matcher = null;
+        boolean matchFlag = true;
+
+        String userName = this.getName();
+        matcher = name_regex.matcher(userName);
+        if (!matcher.find() || userName.isEmpty()){
+            matchFlag = false;
+            System.out.println("SBAGLIATO NOME");
+        }
+        String userSurname = this.getSurname();
+        matcher = name_regex.matcher(userSurname);
+        if (!matcher.find() || userSurname.isEmpty()){
+            matchFlag = false;
+            System.out.println("SBAGLIATO COGNOME");
+        }
+
+        String birthDate = this.getBirthDate();
+        matcher = date_regex.matcher(birthDate);
+        if (!matcher.find() || birthDate.isEmpty() || birthDate == null){
+            matchFlag = false;
+            System.out.println("SBAGLIATA DATA");
+        }
+
+        String nation = this.getNation();
+        matcher = nation_regex.matcher(nation);
+        if (!matcher.find() || nation.isEmpty()){
+            matchFlag = false;
+            System.out.println("SBAGLIATA NAZIONE");
+        }
+
+        String phoneNumber = this.getPhoneNumber();
+        matcher = phone_regex.matcher(phoneNumber);
+        if (!matcher.find() || phoneNumber.isEmpty()){
+            matchFlag = false;
+            System.out.println("SBAGLIATO NUMERO");
+        }
+        return matchFlag;
     }
 
     

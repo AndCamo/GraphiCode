@@ -17,11 +17,11 @@
         <h1 class="title">Dashboard</h1>
     </div>
     <div class="action-container">
-        <div class="action-card" id="add-product-card" onclick="location.href='${pageContext.request.contextPath}/check-in?type=add-product'">
+        <div class="action-card" id="add-product-card" onclick="location.href='${pageContext.request.contextPath}/check-in?type=show-user'">
             <img class="image-card" src="${pageContext.request.contextPath}/assets/user.png">
             <p class="text-card">Gestione Utenti</p>
         </div>
-        <div class="action-card">
+        <div class="action-card" onclick="location.href='${pageContext.request.contextPath}/get-products'">
             <img class="image-card" src="${pageContext.request.contextPath}/assets/box.png">
             <p class="text-card">Gestione Prodotti</p>
         </div>

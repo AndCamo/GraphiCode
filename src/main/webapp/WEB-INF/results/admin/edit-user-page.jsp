@@ -2,25 +2,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registration</title>
+    <title>Modifica Utente</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="text/css" rel="stylesheet" href="style/form-style.css">
-    <link type="text/css" rel="stylesheet" href="style/main-style.css">
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/style/form-style.css">
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/style/main-style.css">
     <link rel="stylesheet" type="text/css" href="./style/style-menu-show.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/2f266e86a2.js" crossorigin="anonymous"></script>
-    <script src="script/navbar-script.js" defer></script>
+    <script src="${pageContext.request.contextPath}/script/navbar-script.js" defer></script>
     <script src="${pageContext.request.contextPath}/script/validateUserForm.js" defer></script>
 </head>
 <body onload="loadCountry()">
-<%@ include file="./navbar.jsp"%>
+<%@ include file="/navbar.jsp"%>
 <div class="main-container">
     <div class="form-container">
         <div class="upper-container">
-            <h3 class="form-title">REGISTRAZIONE</h3>
-            <p class="form-subtitle">Inserisci i tuoi dati.</p>
+            <h3 class="form-title">EDIT USER</h3>
+            <p class="form-subtitle">Modifica i dati dell'utente:</p>
         </div>
-        <form method="post" id="registration-form"  action="add-user" class="registration-form">
+        <form method="post" id="edit-form"  action="update-user" class="registration-form">
             <label for="firstName">Nome:</label>
             <input type="text" id="firstName" name="firstName" placeholder="Nome" required>
             <p id="name-info" class="form-info">Il nome può contenere solo lettere!</p>
@@ -57,10 +57,12 @@
                     <li>Almeno un carattere speciale.</li>
                 </ul>
             </div>
+            <label for="isAdmin">ADMIN:</label><br>
+            <input type="checkbox" id="isAdmin" name="isAdmin" value="true" required>
         </form>
         <div class="button-container">
-            <button class="button-35" onclick="validateRegistration()">Submit</button>
-            <button class="button-35" onclick="document.getElementById('registration-form').reset()">Cancella</button>
+            <button class="button-35" onclick="validateUserEdits()">Submit</button>
+            <button class="button-35">Cancel</button>
         </div>
     </div>
 

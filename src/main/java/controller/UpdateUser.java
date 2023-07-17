@@ -6,24 +6,25 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import model.CartBean;
 import model.CartDAO;
 import model.UserBean;
 import model.UserDAO;
 
-
 import java.io.IOException;
-import java.security.GeneralSecurityException;
-import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@WebServlet("/add-user")
-public class AddUser extends HttpServlet {
+
+@WebServlet(name = "updateUserServlet", value = "/update-user")
+public class UpdateUser extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        HttpSession session = request.getSession();
+        UserBean currentUser = (UserBean) session.getAttribute("user");
         String msg = "";
 
         String userName = request.getParameter("firstName");
@@ -33,11 +34,17 @@ public class AddUser extends HttpServlet {
         String phoneNumber = request.getParameter("phoneNumber");
         String eMail = request.getParameter("email");
         String password = request.getParameter("password");
+        String admin = request.getParameter("isAdmin");
+        boolean isAdmin = (admin == null) ? false : true;
 
-        UserBean newUser = new UserBean(userName, userSurname,
+
+        UserBean userToUpdate = new UserBean(userName, userSurname,
                 eMail, password, phoneNumber, nation, birthDate);
+        userToUpdate.setAdmin(isAdmin);
 
-        boolean matchFlag = newUser.checkUserData();
+        String address = "";
+        UserDAO service = new UserDAO();
+        boolean matchFlag = userToUpdate.checkUserData();
         Matcher matcher = null;
 
         final Pattern email_regex = Pattern.compile("^[a-zA-Z\\d._%-]+@[a-zA-Z\\d.-]+\\.[a-zA-Z]{2,20}$");
@@ -54,39 +61,24 @@ public class AddUser extends HttpServlet {
             System.out.println("SBAGLIATA PASS");
         }
 
-        String address = "";
-        UserDAO service = new UserDAO();
-
         try {
-            if (matchFlag){
-                if (service.isAlreadyRegistered(eMail)) {
-                    request.setAttribute("type", "alert");
-                    request.setAttribute("msg", "Esiste già un utente con questa eMail.");
-                    request.setAttribute("redirect", "/login-page.jsp");
-                    address = "/WEB-INF/results/confirmPage.jsp";
-                } else {
-
-                    service.doSave(newUser);
-                    request.setAttribute("type", "success-add");
-                    request.setAttribute("msg", "Registrazione avvenuta con successo");
+            if (currentUser != null && currentUser.isAdmin()){
+                if (matchFlag) {
+                    service.doUpdate(userToUpdate);
+                    request.setAttribute("type", "success-edit");
+                    request.setAttribute("msg", "Modifica avvenuta con successo");
                     request.setAttribute("redirect", "/index.jsp");
-                    request.getSession().setAttribute("user", newUser);
-                    //CREA CARRELLO
-                    CartBean newCart = new CartBean(newUser.getId());
-                    CartDAO cartService = new CartDAO();
-                    cartService.doSave(newCart);
-                    request.getSession().setAttribute("cart", newCart);
-
+                    request.getSession().setAttribute("user", userToUpdate);
+                } else {
+                    request.setAttribute("type", "registration-error");
+                    request.setAttribute("msg", "Errore nei dati inseriti");
+                    request.setAttribute("redirect", "/index.jsp");
                     address = "/WEB-INF/results/confirmPage.jsp";
                 }
+            } else {
+                response.sendRedirect("index.jsp");
             }
-            else {
-                request.setAttribute("type", "registration-error");
-                request.setAttribute("msg", "Errore nei dati inseriti");
-                request.setAttribute("redirect", "/index.jsp");
-                address = "/WEB-INF/results/confirmPage.jsp";
-            }
-        }catch (SQLException ex){
+        }catch(SQLException ex) {
             request.setAttribute("type", "sqlError");
             request.setAttribute("msg", "Errore durante il caricamento nel database");
             request.setAttribute("redirect", "/index.jsp");
@@ -96,6 +88,8 @@ public class AddUser extends HttpServlet {
 
         RequestDispatcher dispatcher = request.getRequestDispatcher(address);
         dispatcher.forward(request, response);
+
+
     }
 
     @Override

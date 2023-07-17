@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/2f266e86a2.js" crossorigin="anonymous"></script>
     <script src="script/navbar-script.js" defer></script>
-    <script src="${pageContext.request.contextPath}/script/validateForm.js" defer></script>
+    <script src="${pageContext.request.contextPath}/script/validateUserForm.js" defer></script>
 </head>
 <body>
 <%
@@ -27,13 +27,13 @@
         </div>
         <form method="post" id="login-form"  action="login" class="registration-form">
             <label for="email">eMail:</label><br>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" value="andreacamoia10@gmail.com" required>
             <p id="mail-info" class="form-info"> Formato eMail non valido!</p>
             <div class="label-container">
                 <label for="password" class="label-field"> Password</label>
                 <i class="fa-sharp fa-solid fa-circle-info icon" id="password-info-icon"></i>
             </div>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" value="Andcamo-10" required>
             <div id="password-info" class="form-info"> <p>La password deve contenere:</p>
                 <ul>
                     <li>Minimo 8 caratteri.</li>

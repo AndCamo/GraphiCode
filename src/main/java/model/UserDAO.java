@@ -1,6 +1,8 @@
 package model;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDAO {
     public void doSave(UserBean newUser) throws SQLException {
@@ -27,6 +29,25 @@ public class UserDAO {
             ConnectionPool.closeConnection();
     }
 
+    public void doUpdate(UserBean user) throws SQLException {
+            Connection connection = ConnectionPool.getConnection();
+            String query = "UPDATE Utente SET nome = '" + user.getName() + "', cognome = '" + user.getSurname() + "', eMail = '" + user.geteMail() + "', passkey = '" + user.getPassword() + "', telefono = '" + user.getPhoneNumber() + "', data_di_nascita = '" + user.getBirthDate() +  "', nazione = '" + user.getNation() +
+                    "', isAdmin = '" + user.isAdmin() + "'WHERE id = " + user.getId();
+            Statement stm = connection.createStatement();
+            stm.executeUpdate(query);
+
+            ConnectionPool.closeConnection();
+    }
+
+    public void changeAdminStatus(UserBean user, boolean isAdmin) throws SQLException{
+            Connection connection = ConnectionPool.getConnection();
+            String query = "UPDATE Utente SET isAdmin = '" + isAdmin + "'WHERE id = " + user.getId();
+            Statement stm = connection.createStatement();
+            stm.executeUpdate(query);
+
+            ConnectionPool.closeConnection();
+    }
+
     public boolean isAlreadyRegistered(String eMail) throws SQLException {
             Connection connection = ConnectionPool.getConnection();
             PreparedStatement ps = connection.prepareStatement(
@@ -45,7 +66,6 @@ public class UserDAO {
             ps.setString(1, email);
             ps.setString(2, password);
             ResultSet rs = ps.executeQuery();
-            System.out.println("AGGIORNATO");
             if (rs.next()){
                     UserBean retrievedUser = new UserBean();
                     retrievedUser.setId(rs.getInt("id"));
@@ -61,5 +81,56 @@ public class UserDAO {
                     return retrievedUser;
             }
             return null;
+    }
+
+        public UserBean doRetrieveById(int userId) throws SQLException {
+                Connection connection = ConnectionPool.getConnection();
+                PreparedStatement ps = connection.prepareStatement(
+                        "SELECT * " +
+                                "FROM Utente " +
+                                "WHERE id=?");
+                ps.setInt(1, userId);
+                ResultSet rs = ps.executeQuery();
+                if (rs.next()){
+                        UserBean retrievedUser = new UserBean();
+                        retrievedUser.setId(rs.getInt("id"));
+                        retrievedUser.setName(rs.getString("nome"));
+                        retrievedUser.setSurname(rs.getString("cognome"));
+                        retrievedUser.seteMail(rs.getString("eMail"));
+                        retrievedUser.setPassword(rs.getString("passkey"));
+                        retrievedUser.setPhoneNumber(rs.getString("telefono"));
+                        retrievedUser.setBirthDate(rs.getDate("data_di_nascita").toString());
+                        retrievedUser.setNation(rs.getString("nazione"));
+                        retrievedUser.setAdmin(rs.getString("isAdmin").equals("true"));
+
+                        return retrievedUser;
+                }
+                return null;
+        }
+
+    public List<UserBean> doRetrieveAll() throws SQLException{
+            Connection connection = ConnectionPool.getConnection();
+            PreparedStatement ps = connection.prepareStatement(
+                    "SELECT * FROM Utente");
+
+            ArrayList<UserBean> usersList = new ArrayList<UserBean>();
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()){
+                    UserBean tmpUser = new UserBean();
+                    tmpUser.setId(rs.getInt("id"));
+                    tmpUser.setName(rs.getString("nome"));
+                    tmpUser.setSurname(rs.getString("cognome"));
+                    tmpUser.seteMail(rs.getString("eMail"));
+                    tmpUser.setHashedPassword(rs.getString("passkey"));
+                    tmpUser.setPhoneNumber(rs.getString("telefono"));
+                    tmpUser.setBirthDate(rs.getDate("data_di_nascita").toString());
+                    tmpUser.setNation(rs.getString("nazione"));
+                    tmpUser.setAdmin(rs.getString("isAdmin").equals("true"));
+
+                    usersList.add(tmpUser);
+            }
+
+            return usersList;
     }
 }

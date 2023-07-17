@@ -1,0 +1,11 @@
+
+
+span.info-header{
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+p.info-text{
+    margin: 0;
+    font-size: 1.3rem;
+}

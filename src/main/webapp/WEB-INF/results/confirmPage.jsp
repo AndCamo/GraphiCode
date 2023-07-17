@@ -20,7 +20,7 @@
   <body>
   <%@ include file="/navbar.jsp"%>
     <script>
-      setTimeout("window.location.href='<%=(String)request.getAttribute("redirect")%>'", 10000)
+      //setTimeout("window.location.href='<%=(String)request.getAttribute("redirect")%>'", 10000)
       let timeleft = 10;
       let downloadTimer = setInterval(function(){
         if(timeleft <= 0){
@@ -34,22 +34,26 @@
 
     <div class="main-container">
       <div class="result-container">
-        <h2 id="result-title">
-          <%
-            String type = (String) request.getAttribute("type");
-            if(type.equals("success-insert") || type.equals("success-login")){
-          %>
-            Benvenuto, ${sessionScope.user.getName()}
-          <%} else if (type.equals("alert")){%>
-            Attenzione!
-          <%} else {%>
+        <div id="result-title-containter">
+          <h2 id="result-title">
+            <%
+              String type = (String) request.getAttribute("type");
+              if(type.equals("success-insert") || type.equals("success-login")){
+            %>
+              Ciao, ${sessionScope.user.getName()}!
+            <%} else if (type.equals("alert")){%>
+              Attenzione!
+            <%} else if (type.equals("success-add") || type.equals("success-edit")){%>
+              Operazione confermata
+            <%} else{%>
             Errore!
-          <%}%>
-        </h2>
+            <%}%>
+          </h2>
+        </div>
         <h3 id="result-message">${requestScope.msg}</h3>
         <div class="redirect-container">
           <ul>
-            <li><p><a href="${requestScope.redirect}" class="error">Procedi</a></p></li>
+            <li><p id="next" onclick="location.href='${pageContext.request.contextPath}' + '${requestScope.redirect}'">Procedi</p></li>
             <li><p id="timer">10</p></li>
           </ul>
         </div>

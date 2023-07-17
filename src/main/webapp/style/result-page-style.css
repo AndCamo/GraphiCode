@@ -5,6 +5,16 @@
     margin: 0 auto;
 }
 
+@media all and (max-width: 380px) {
+    .result-container{
+        width: 90%;
+        padding: 20px;
+    }
+    #result-title{
+        font-size: 30px;
+    }
+}
+
 .redirect-container{
     font-size: 1.4rem;
     justify-content: center;
@@ -28,24 +38,35 @@
 .redirect-container a:hover{
     color: lightgrey;
 }
-
 #result-title{
     font-family: 'Rubik Mono One', monospace;
-    color: white;
     font-size: calc(40px + 0.390625vw);
-    display: inline-block;
-    margin: 1vh 1vh;
+    color: white;
+    margin: 0 auto;
 }
 
 #result-message{
     color: white;
     font-size: calc(25px + 0.390625vw);
     display: inline-block;
-    margin: 1vh 1vh;
-    padding: 10px;
+    padding: 20px;
     width: 100%;
     border-radius: 20px;
     border: 3px solid #e5383b;
-    box-sizing: content-box;
+    box-sizing: border-box;
 }
 
+#next{
+    margin: 0 auto;
+    width: min-content;
+    color: #141414;
+    padding: 10px;
+    background-color: white;
+    border: 3px solid #e5383b;
+    border-radius: 10px;
+}
+
+#next:hover{
+    color: white;
+    background-color: #e5383b;
+}

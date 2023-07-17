@@ -3,14 +3,14 @@ const nation_regex = /^[a-zA-ZÀ-ÿ ]*$/;
 const password_regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).+$/;
 const date_regex = /^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/;
 const email_regex = /^[a-zA-Z\d._%-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,20}$/;
-const phone_regex = /^\d{10}$/;
+const phone_regex = /^\d{1,10}$/;
 
 
 window.addEventListener("keydown", function (event){
     let url = window.location.pathname;
     let page = url.split("/").pop();
     if (event.key==="Enter"){
-        if (page === "login-page.jsp")
+        if (page === "login-page.jsp" || page === "login")
             validateLogin();
         else if (page === "registration-page.jsp")
             validateRegistration();
@@ -153,6 +153,12 @@ function validateLoginData(){
 function validateRegistration(){
     if (validateLoginData() & validatePersonalData()){
         document.getElementById("registration-form").submit();
+    }
+}
+
+function validateUserEdits(){
+    if (validateLoginData() & validatePersonalData()){
+        document.getElementById("edit-form").submit();
     }
 }
 

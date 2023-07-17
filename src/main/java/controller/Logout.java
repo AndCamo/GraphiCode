@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 
+
 @WebServlet(name = "logoutServlet", value = "/logout")
 public class Logout extends HttpServlet {
 

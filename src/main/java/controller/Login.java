@@ -22,15 +22,24 @@ public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         final Pattern email_regex = Pattern.compile("^[a-zA-Z\\d._%-]+@[a-zA-Z\\d.-]+\\.[a-zA-Z]{2,20}$");
+        final Pattern password_regex = Pattern.compile("^(?=.*[A-Z])(?=.*\\d)(?=.*[^\\w\\s]).+$");
         boolean matchFlag = true;
+        Matcher matcher = null;
 
         String eMail = request.getParameter("email");
-        Matcher matcher = email_regex.matcher(eMail);
+        matcher = email_regex.matcher(eMail);
         if (!matcher.find() || eMail.isEmpty()){
             matchFlag = false;
             System.out.println("SBAGLIATA EMAIL");
         }
         String password = request.getParameter("password");
+
+        matcher = password_regex.matcher(password);
+        if (!matcher.find() || password.isEmpty()){
+            matchFlag = false;
+            System.out.println(password);
+            System.out.println("SBAGLIATA PASS");
+        }
 
         String address = "";
         UserDAO service = new UserDAO();
@@ -40,7 +49,7 @@ public class Login extends HttpServlet {
                 if (user != null) {
                     request.setAttribute("type", "success-login");
                     request.setAttribute("msg", "Login avvenuto con successo");
-                    request.setAttribute("redirect", "index.jsp");
+                    request.setAttribute("redirect", "/index.jsp");
                     address = "/WEB-INF/results/confirmPage.jsp";
                     request.getSession().setAttribute("user", user);
 
@@ -52,7 +61,7 @@ public class Login extends HttpServlet {
                 } else {
                     request.setAttribute("type", "login-error");
                     request.setAttribute("msg", "Credenziali sbagliate!");
-                    request.setAttribute("redirect", "index.jsp");
+                    request.setAttribute("redirect", "/index.jsp");
                     address = "login-page.jsp";
                 }
             }
@@ -60,7 +69,7 @@ public class Login extends HttpServlet {
             ex.printStackTrace();
             request.setAttribute("type", "sqlError");
             request.setAttribute("msg", "Errore durante la ricerca nel database");
-            request.setAttribute("redirect", "index.jsp");
+            request.setAttribute("redirect", "/index.jsp");
             address = "/WEB-INF/results/confirmPage.jsp";
         }
 

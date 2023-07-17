@@ -7,7 +7,7 @@
         <div class="nav-container">
             <ul>
                 <li><a href="index.jsp" style="color: #F16461; text-decoration: underline;">Home</a></li>
-                <li><a href="#">Works</a></li>
+                <li><a href="show-catalog?filter=all">Catalogo</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
                 <%
@@ -16,7 +16,7 @@
                 %>
                     <li><a href="login-page.jsp">Log in</a><a href="registration-page.jsp">Sign up</a></li>
                 <% } else {%>
-                    <li><a href=""><%= profile.getName()%>, <%= profile.getId()%></a><a onclick="location.href='${pageContext.request.contextPath}/logout'">Log out</a></li>
+                    <li><a href=""><%= profile.getName()%></a><a onclick="location.href='${pageContext.request.contextPath}/logout'">Log out</a></li>
                 <%}%>
             </ul>
         </div>
