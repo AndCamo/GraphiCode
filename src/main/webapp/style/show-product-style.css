@@ -1,0 +1,131 @@
+.product-image-container{
+    background-color: #181a1a;
+    width: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 4px 14px -4px #000000;
+}
+
+.product-image-container img{
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    transition: all 0.3s;
+}
+
+.product-details-container{
+    width: 90%;
+    padding: 1vw 7vw;
+    display: block;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+h4{
+    width: fit-content;
+    margin: 0 auto;
+    display: block;
+    box-sizing: border-box;
+}
+
+.product-details-price{
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    color: #a9a9a9 !important;
+    font-size: 1.5rem;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.product-details-description{
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    color: #141414;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+}
+
+.product-briefing-container{
+    width: 90%;
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.product-briefing-container p#alert{
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    color: #141414;
+    text-decoration: underline;
+    font-size: 1.2rem;
+    font-weight: 800;
+    line-height: 1.4rem;
+}
+
+.product-briefing-container form{
+    font-size: 1.1rem;
+}
+
+textarea{
+    resize: vertical;
+    padding: 10px !important;
+
+}
+
+.column{
+    margin: 0 auto;
+    width: 45%;
+    display: inline-block;
+}
+
+@media all and (max-width: 1240px) and (min-width: 426px){
+    .column{
+        display: block;
+        margin: 0 auto !important;
+        box-sizing: border-box;
+        width: 80%;
+        float: none !important;
+    }
+
+    .product-briefing-container{
+        display: block;
+        width: 100%;
+        box-sizing:  border-box;
+        margin: 0;
+        padding: 25px 0 25px 0;
+    }
+
+    form#briefing-form{
+        margin: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .column{
+        display: block;
+        margin: 0 !important;
+        box-sizing: border-box;
+        width: 100%;
+        float: none !important;
+    }
+
+    .product-briefing-container{
+        display: block;
+        width: 100%;
+        box-sizing:  border-box;
+        margin: 0;
+        padding: 25px 0 25px 0;
+    }
+
+    form#briefing-form{
+        margin: 0;
+        width: 100%;
+    }
+}

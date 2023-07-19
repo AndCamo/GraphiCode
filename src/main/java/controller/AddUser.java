@@ -67,7 +67,7 @@ public class AddUser extends HttpServlet {
                 } else {
 
                     service.doSave(newUser);
-                    request.setAttribute("type", "success-add");
+                    request.setAttribute("type", "success-registration");
                     request.setAttribute("msg", "Registrazione avvenuta con successo");
                     request.setAttribute("redirect", "/index.jsp");
                     request.getSession().setAttribute("user", newUser);

@@ -21,7 +21,7 @@
             </ul>
         </div>
     </nav>
-    <img id="navbar-logo" src="./assets/Pittogramma.png">
+    <img  style="cursor: pointer;" onclick="location.href= 'index.jsp'" id="navbar-logo" src="./assets/Pittogramma.png">
     <%
         if(profile != null && profile.isAdmin()){
     %>

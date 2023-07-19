@@ -25,7 +25,7 @@
             <input type="text" id="firstName" name="firstName" placeholder="Nome" required>
             <p id="name-info" class="form-info">Il nome può contenere solo lettere!</p>
             <label for="lastName">Cognome:</label><br>
-            <input type="text" id="lastName" name="lastName" required>
+            <input type="text" id="lastName" name="lastName" placeholder="Cognome" required>
             <p id="secondName-info" class="form-info">Il cognome può contenere solo lettere!</p>
             <label for="birthDate">Data di Nascita:</label><br>
             <input type="date" id="birthDate" name="birthDate" required>
@@ -39,16 +39,16 @@
                 <label for="phoneNumber" class="label-field">Numero di telefono:</label>
                 <i class="fa-sharp fa-solid fa-circle-info icon" id="phone-info-icon"></i>
             </div>
-            <input type="tel" id="phoneNumber" name="phoneNumber" required>
+            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Numero di telefono" required>
             <p id="phone-info" class="form-info">Il campo deve contenere 10 difre decimali!</p>
             <label for="email">eMail:</label><br>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" placeholder="eMail" required>
             <p id="mail-info" class="form-info"> Formato eMail non valido!</p>
             <div class="label-container">
                 <label for="password" class="label-field"> Password</label>
                 <i class="fa-sharp fa-solid fa-circle-info icon" id="password-info-icon"></i>
             </div>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
             <div id="password-info" class="form-info"> <p>La password deve contenere:</p>
                 <ul>
                     <li>Minimo 8 caratteri.</li>

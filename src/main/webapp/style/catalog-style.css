@@ -36,20 +36,28 @@
     transition: all .2s,-webkit-box-shadow .2s;
 }
 
-.product-image-container{
+.card-image-container{
     background-color: #181a1a;
     width: 100%;
+    margin: 0 auto;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
-.product-image-container img{
+.card-image-container img{
     margin: 0 auto;
     max-width: 100%;
     max-height: 100%;
     display: block;
+    transition: all 0.3s;
 }
 
-.product-info-container{
+.card-image-container:hover img{
+    transform: scale(1.1);
+}
+
+
+.card-info-container{
     display: block;
     justify-content: center;
     background-color: #181a1a;
@@ -58,13 +66,13 @@
     box-sizing: border-box;
 }
 
-.product-info-container p{
+.card-info-container p{
     width: fit-content;
     margin: 0 auto;
     word-wrap: break-word;
 }
 
-.product-category{
+.card-product-category{
     padding-top: 0;
     padding-bottom: 0;
     margin: 0 auto;
@@ -75,7 +83,7 @@
     box-sizing: border-box;
 }
 
-.product-name{
+.card-product-name{
     margin: 0 auto;
     padding-top: 0;
     padding-bottom: 0;
@@ -87,15 +95,31 @@
     transition: all .2s;
 }
 
-.product-price{
+.card-product-price{
     margin: 0 auto;
+    font-size: 1.4rem;
+    justify-content: center;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.product-price-value{
+    display: inline-block;
     color: #a9a9a9 !important;
     font-size: 1.4rem;
     text-decoration: underline;
     font-weight: 600;
-    display: block;
-    box-sizing: border-box;
 }
+
+.product-price-og{
+    display: inline-block;
+    color: #e5383b !important;
+    font-size: 1.4rem;
+    text-decoration: line-through;
+    font-weight: 600;
+    padding-right: 0.8vw;
+}
+
 
 .product-button-container{
     margin: 1.2vh auto 1.2vh auto;
@@ -172,14 +196,18 @@
         width: 95%;
         word-break: break-word;
     }
-    .product-category{
+    .card-product-category{
         font-size: 1.1rem;
     }
 
-    .product-name{
+    .card-product-name{
         font-size: 1.4rem;
     }
-    .product-price{
+    .card-product-price{
         font-size: 1.2rem;
+    }
+
+    #filter-container form{
+        width: 90%;
     }
 }

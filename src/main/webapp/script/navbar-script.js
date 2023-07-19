@@ -1,9 +1,5 @@
 var prevScrollpos = window.pageYOffset;
 let myElement = document.getElementById("navbar");
-    if (myElement == null)
-        console.log("CAZZO");
-    else
-        console.log("ENNO")
 let navbarStyle = window.getComputedStyle(myElement);
 var originalHeight = navbarStyle.height;
 console.log(originalHeight);
@@ -31,9 +27,11 @@ function showMenu() {
         document.getElementsByTagName("body")[0].style.overflow = "hidden";
         $(".nav-container").fadeIn("fast");
         document.getElementById("navbar-menu-icon").src="./assets/close.png";
+        $(".card-image-container").style("overflow", "hidden");
     } else {
         document.getElementsByTagName("body")[0].style.overflow = "auto";
         $(".nav-container").fadeOut("fast");
         document.getElementById("navbar-menu-icon").src="./assets/menu.png";
+        $(".card-image-container").style("overflow", "visible");
     }
 }

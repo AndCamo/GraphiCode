@@ -38,7 +38,7 @@
           <h2 id="result-title">
             <%
               String type = (String) request.getAttribute("type");
-              if(type.equals("success-insert") || type.equals("success-login")){
+              if(type.equals("success-registration") || type.equals("success-login")){
             %>
               Ciao, ${sessionScope.user.getName()}!
             <%} else if (type.equals("alert")){%>

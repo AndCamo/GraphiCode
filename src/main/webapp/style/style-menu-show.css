@@ -36,6 +36,11 @@ img#navbar-logo {
     height: 45%;
  }
 
+.cart-count{
+    display: inline;
+    color: white;
+}
+
  img#navbar-menu-icon {
     position: absolute;
     left: 20%;

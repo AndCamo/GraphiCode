@@ -1,6 +1,7 @@
 package model;
 
 import java.awt.geom.Line2D;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -81,6 +82,16 @@ public class ProductBean {
 
     public void setSale(int sale) {
         this.sale = sale;
+    }
+
+    public double getDiscountedPrice(){
+        double newPrice, discountValue;
+        discountValue = (this.getPrice() * this.getSale()) / 100;
+        newPrice = this.getPrice() - discountValue;
+        DecimalFormat df = new DecimalFormat("####0.00");
+        newPrice = Math.round(newPrice*100.0)/100.0;
+
+        return newPrice;
     }
 
     public String getImage() {

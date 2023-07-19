@@ -68,13 +68,17 @@
           for (int i = 0; i < productList.size(); i++){
       %>
             <div class="product-container">
-              <div class="product-image-container">
+              <div class="card-image-container">
                 <img src="<%=productList.get(i).getImage()%>" alt="<%=productList.get(i).getImage()%>">
               </div>
-              <div class="product-info-container">
-                <p class="product-category"><%=productList.get(i).getCategory()%></p>
-                <p class="product-name"><%=productList.get(i).getName()%></p>
-                <p class="product-price"><%=productList.get(i).getPrice()%>€</p>
+              <div class="card-info-container">
+                <p class="card-product-category"><%=productList.get(i).getCategory()%></p>
+                <p class="card-product-name"><%=productList.get(i).getName()%></p>
+                <%if (productList.get(i).getSale() > 0){%>
+                  <p class="card-product-price"> <span class="product-price-og"><%=productList.get(i).getPrice()%>€<i class="fa-solid fa-tag"></i> </span><span class="product-price-value"><%=productList.get(i).getDiscountedPrice()%>€</span></p>
+                <%} else {%>
+                  <p class="card-product-price"> <span class="product-price-value"><%=productList.get(i).getDiscountedPrice()%>€</span></p>
+                <%}%>
                 <div class="product-button-container">
                   <button class="product-button" type="button" onclick="location.href='${pageContext.request.contextPath}/show-product?productCode=<%=productList.get(i).getCode()%>'">Visualizza</button>
                 </div>

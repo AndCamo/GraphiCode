@@ -26,7 +26,6 @@ public class SetAdmin extends HttpServlet {
         int idToEdit = Integer.parseInt(request.getParameter("userId"));
         String esit = "";
         boolean status = false;
-        System.out.println(idToEdit);
         if (currentUser != null && currentUser.isAdmin() && currentUser.getId() != idToEdit){
             UserDAO userService = new UserDAO();
             try {
@@ -49,10 +48,6 @@ public class SetAdmin extends HttpServlet {
                         "\"isAdmin\":" + status +
                 "}");
         out.close();
-        System.out.println("{" +
-                "\"esit\": " + "\"" + esit + "\",\n" +
-                "\"isAdmin\":" + status +
-                "}");
     }
 
     @Override

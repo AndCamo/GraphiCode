@@ -60,7 +60,7 @@ public class AddProduct extends HttpServlet {
                         address = "/WEB-INF/results/confirmPage.jsp";
                     } else {
                         productService.doSave(newProduct);
-                        request.setAttribute("type", "success-insert");
+                        request.setAttribute("type", "success-add");
                         request.setAttribute("msg", "Caricamento prodotto avvenuto con successo");
                         request.setAttribute("redirect", "/check-in?type=dashboard");
                         address = "/WEB-INF/results/confirmPage.jsp";
