@@ -24,7 +24,7 @@ public class ProductInfo extends HttpServlet {
         UserBean currentUser = (UserBean) session.getAttribute("user");
         String address = "";
         String codeToGet = (request.getParameter("productCode")) != null ? request.getParameter("productCode") : "AAA000";
-        System.out.println(codeToGet);
+
         try {
             ProductDAO productService = new ProductDAO();
             ProductBean product = productService.doRetrieveById(codeToGet);

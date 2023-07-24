@@ -22,7 +22,7 @@
     <div class="title-container">
         <h1 class="title">Info Prodotto</h1>
     </div>
-    <div class="main-panel">
+    <div id="info-container">
         <p class="info-text"><span class="info-header">Codice:</span> ${requestScope.product.getCode()}</p>
         <p class="info-text"><span class="info-header">Nome:</span> ${requestScope.product.getName()}</p>
         <p class="info-text"><span class="info-header">Prezzo:</span> ${requestScope.product.getPrice()}€</p>
@@ -35,7 +35,7 @@
         </div>
 
         <div class="button-container">
-            <button class="button-35" type="button" onclick="location.href='${pageContext.request.contextPath}/get-products'"><i class="fa-sharp fa-solid fa-backward" style="color: #1c1c1c;"></i> Indietro</button>
+            <button class="button-35" type="button" onclick="location.href='${pageContext.request.contextPath}/get-products'"><i class="fa-sharp fa-solid fa-backward" style="color: #1c1c1c;"></i>Indietro</button>
         </div>
     </div>
 </div>

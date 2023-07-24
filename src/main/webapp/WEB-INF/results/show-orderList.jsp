@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style/form-style.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style/dashboard-style.css">
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/style/show-page-style.css">
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/style/cart-style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath}/script/navbar-script.js" defer></script>
     <script src="https://kit.fontawesome.com/2f266e86a2.js" crossorigin="anonymous"></script>
@@ -49,7 +50,7 @@
                 <div class="list-col" id="col3"><span class="col-label">Nome: </span> <span class="col-text"><%= tmpOrder.getString("userName")%></span></div>
                 <div class="list-col" id="col4"><span class="col-label">Cognome: </span> <span class="col-text"><%= tmpOrder.getString("userSurname")%></span></div>
                 <div class="list-col list-button-container">
-                    <div class="list-col list-button"><a href="">Visualizza</a></div>
+                    <div class="list-col list-button"><a href="order-info?orderNumber=<%=tmpOrder.getInt("orderId")%>">Visualizza</a></div>
                 </div>
             </div>
         </div>

@@ -6,16 +6,14 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.CartBean;
-import model.CartDAO;
-import model.UserBean;
-import model.UserDAO;
+import model.*;
 
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -79,10 +77,24 @@ public class AddUser extends HttpServlet {
                     request.setAttribute("redirect", "/index.jsp");
                     request.getSession().setAttribute("user", newUser);
                     //CREA CARRELLO
-                    CartBean newCart = new CartBean(newUser.getId());
-                    CartDAO cartService = new CartDAO();
-                    cartService.doSave(newCart);
-                    request.getSession().setAttribute("cart", newCart);
+                    if (!newUser.isAdmin()){
+                        CartBean newCart = (CartBean) request.getSession().getAttribute("cart");
+                        CartDAO cartService = new CartDAO();
+                        CartBean userCart = new CartBean(newUser.getId());
+                        cartService.doSave(userCart);
+
+                        if(newCart != null) {
+                            CartItemDAO cartItemService = new CartItemDAO();
+                            List<CartItemBean> newCartItems = newCart.getProductList();
+                            for (CartItemBean tmpItem : newCartItems){
+                                cartItemService.updateCartId(tmpItem, userCart.getId());
+                            }
+                            cartService.doDeleteById(newCart.getId());
+                            userCart.setProductList(newCartItems);
+                            cartService.updateArticleNumber(userCart, userCart.getProductCount());
+                        }
+                        request.getSession().setAttribute("cart", userCart);
+                    }
 
                     address = "/WEB-INF/results/confirmPage.jsp";
                 }

@@ -83,3 +83,7 @@ function validateBriefing(){
             document.getElementById("briefing-form").submit();
     }
 }
+
+function addToCart(){
+    document.getElementById("briefing-form").submit();
+}

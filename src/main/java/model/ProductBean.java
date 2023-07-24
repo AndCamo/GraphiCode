@@ -11,7 +11,6 @@ import java.util.regex.Pattern;
 public class ProductBean {
 
     public ProductBean() {
-        this.reviews = new ArrayList<>();
     };
 
 
@@ -24,7 +23,6 @@ public class ProductBean {
         this.description = description;
         this.price = price;
         this.sale = 0;
-        this.reviews = new ArrayList<>();
     }
     public ProductBean(String code, String name, String category,
                        String image, String description, double price){
@@ -35,7 +33,6 @@ public class ProductBean {
         this.description = description;
         this.price = price;
         this.sale = 0;
-        this.reviews = new ArrayList<>();
     }
 
     public String getCode() {
@@ -110,17 +107,6 @@ public class ProductBean {
         this.category = category;
     }
 
-    public List<ReviewBean> getReviews() {
-        return reviews;
-    }
-
-    public void setReviews(List<ReviewBean> reviews) {
-        this.reviews = reviews;
-    }
-
-    public void addReview(ReviewBean newReview){
-        reviews.add(newReview);
-    }
 
     public boolean isPersonalized() {
         return personalized;
@@ -183,7 +169,6 @@ public class ProductBean {
     }
 
 
-    private List<ReviewBean> reviews;
     private String code, name, category, image, description;
     private int sale;
     private boolean personalized;

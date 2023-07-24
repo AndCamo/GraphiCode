@@ -88,7 +88,7 @@ public class DoOrder extends HttpServlet {
 
                         request.setAttribute("type", "success-order");
                         request.setAttribute("msg", "Ordine effettuato con successo! Procedi per visualizzare i dettagli.");
-                        request.setAttribute("redirect", "/index.jsp");
+                        request.setAttribute("redirect", "/order-info?orderNumber=" + newOrder.getOrderNumber());
                         address = "/WEB-INF/results/confirmPage.jsp";
                     } else {
                         request.setAttribute("type", "error");

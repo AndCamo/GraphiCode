@@ -7,7 +7,6 @@ import java.util.List;
 public class OrderBean {
 
     public OrderBean(){
-        orderItemList = new ArrayList<>();
     }
 
     public OrderBean(int orderNumber, int userId, int paymentID, String orderDate, double totalAmount){
@@ -65,18 +64,10 @@ public class OrderBean {
         this.orderDate = LocalDate.parse(orderDate);
     }
 
-    public List<OrderItemBean> getOrderItemList() {
-        return orderItemList;
-    }
-
-    public void setOrderItemList(List<OrderItemBean> orderItemList) {
-        this.orderItemList = orderItemList;
-    }
 
     private int orderNumber, userId;
     private int paymentID;
     private LocalDate orderDate;
     private double totalAmount;
-    private List<OrderItemBean> orderItemList;
 
 }

@@ -79,4 +79,14 @@ public class CartItemDAO {
         }
         return cartItemList;
     }
+
+    public void updateCartId(CartItemBean cartItem, int newCartId) throws SQLException{
+        Connection con = ConnectionPool.getConnection();
+        PreparedStatement ps = con.prepareStatement(
+                "UPDATE Item_Carrello SET id_carrello = ? WHERE id = ?");
+        ps.setInt(1, newCartId);
+        ps.setInt(2, cartItem.getId());
+        ps.executeUpdate();
+        ConnectionPool.closeConnection();
+    }
 }

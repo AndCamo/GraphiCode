@@ -22,15 +22,17 @@
     <div class="title-container">
         <h1 class="title">Info Utente</h1>
     </div>
-    <div class="main-panel">
-        <p class="info-text"><span class="info-header">ID:</span> ${requestScope.userInfo.getId()}</p>
-        <p class="info-text"><span class="info-header">Nome:</span> ${requestScope.userInfo.getName()}</p>
-        <p class="info-text"><span class="info-header">Cognome:</span> ${requestScope.userInfo.getSurname()}</p>
-        <p class="info-text"><span class="info-header">E-Mail:</span> ${requestScope.userInfo.geteMail()}</p>
-        <p class="info-text"><span class="info-header">Telefono:</span> ${requestScope.userInfo.getPhoneNumber()}</p>
-        <p class="info-text"><span class="info-header">Nazione:</span> ${requestScope.userInfo.getNation()}</p>
-        <p class="info-text"><span class="info-header">Data di Nascita:</span> ${requestScope.userInfo.getBirthDate()}</p>
-        <p class="info-text"><span class="info-header">Admin:</span> ${requestScope.userInfo.isAdmin()}</p>
+    <div id="info-container">
+        <div class="text-container">
+            <p class="info-text"><span class="info-header">ID:</span> ${requestScope.userInfo.getId()}</p>
+            <p class="info-text"><span class="info-header">Nome:</span> ${requestScope.userInfo.getName()}</p>
+            <p class="info-text"><span class="info-header">Cognome:</span> ${requestScope.userInfo.getSurname()}</p>
+            <p class="info-text"><span class="info-header">E-Mail:</span> ${requestScope.userInfo.geteMail()}</p>
+            <p class="info-text"><span class="info-header">Telefono:</span> ${requestScope.userInfo.getPhoneNumber()}</p>
+            <p class="info-text"><span class="info-header">Nazione:</span> ${requestScope.userInfo.getNation()}</p>
+            <p class="info-text"><span class="info-header">Data di Nascita:</span> ${requestScope.userInfo.getBirthDate()}</p>
+            <p class="info-text"><span class="info-header">Admin:</span> ${requestScope.userInfo.isAdmin()}</p>
+        </div>
         <div class="button-container">
             <button class="button-35" type="button" onclick="location.href='${pageContext.request.contextPath}/get-users'"><i class="fa-sharp fa-solid fa-backward" style="color: #1c1c1c;"></i> Indietro</button>
         </div>

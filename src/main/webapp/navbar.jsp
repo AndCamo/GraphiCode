@@ -8,8 +8,8 @@
             <ul>
                 <li><a href="index.jsp" style="color: #F16461; text-decoration: underline;">Home</a></li>
                 <li><a href="show-catalog?filter=all">Catalogo</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="about.jsp">About</a></li>
+                <li><a href="contact.jsp">Contatti</a></li>
                 <%
                     UserBean profile = (UserBean) request.getSession().getAttribute("user");
                     if(profile == null) {

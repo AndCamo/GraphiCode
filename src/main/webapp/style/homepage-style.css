@@ -60,7 +60,7 @@
 .dim-image{
     width: 45%;
     display: block;
-    margin: 3vh auto;
+    margin: auto;
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -87,9 +87,10 @@
 }
 
 .dim-text{
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 1.1;
     color: white;
+    text-align: justify-all;
 }
 
 .dim-button{

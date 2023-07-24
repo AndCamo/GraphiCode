@@ -41,6 +41,7 @@ public class OrderItemDAO {
         List<OrderItemBean> orderItemList = new ArrayList<>();
         while (rs.next()){
             OrderItemBean orderItem = new OrderItemBean();
+            orderItem.setProductCode(rs.getString("cod_prodotto"));
             orderItem.setId(rs.getInt("id"));
             orderItem.setOrderNumber(rs.getInt("numero_ordine"));
             int briefID = rs.getInt("id_briefing")==0 ? -1 : rs.getInt("id_briefing");
@@ -51,5 +52,28 @@ public class OrderItemDAO {
             orderItemList.add(orderItem);
         }
         return  orderItemList;
+    }
+
+    public OrderItemBean doRetrieveById(int id) throws SQLException{
+        Connection connection = ConnectionPool.getConnection();
+        PreparedStatement ps = connection.prepareStatement(
+                "SELECT * " +
+                        "FROM Item_Ordine " +
+                        "WHERE id=?");
+        ps.setInt(1, id);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()){
+            OrderItemBean orderItem = new OrderItemBean();
+            orderItem.setProductCode(rs.getString("cod_prodotto"));
+            orderItem.setId(rs.getInt("id"));
+            orderItem.setOrderNumber(rs.getInt("numero_ordine"));
+            int briefID = rs.getInt("id_briefing")==0 ? -1 : rs.getInt("id_briefing");
+            orderItem.setBriefingId(briefID);
+            orderItem.setQuantity(rs.getInt("quantita"));
+            orderItem.setPrice(rs.getDouble("prezzo_acquisto"));
+
+            return  orderItem;
+        }
+        return  null;
     }
 }

@@ -67,10 +67,16 @@ public class Login extends HttpServlet {
                         }
                         if(newCart == null) {
                             userCart.loadCart();
+                            cartService.updateArticleNumber(userCart, userCart.getProductCount());
                         } else {
+                            CartItemDAO cartItemService = new CartItemDAO();
                             List<CartItemBean> newCartItems = newCart.getProductList();
+                            for (CartItemBean tmpItem : newCartItems){
+                                cartItemService.updateCartId(tmpItem, userCart.getId());
+                            }
                             cartService.doDeleteById(newCart.getId());
                             userCart.setProductList(newCartItems);
+                            cartService.updateArticleNumber(userCart, userCart.getProductCount());
                         }
                         request.getSession().setAttribute("cart", userCart);
                     }

@@ -45,6 +45,7 @@ h4{
     width: fit-content;
     margin: 0 auto;
     color: #141414;
+    text-align: justify-all;
     font-size: 1.2rem;
     line-height: 1.4rem;
 }
@@ -141,4 +142,6 @@ textarea{
         margin-top: 4vh;
         line-height: 1.2
     }
+
+    .in
 }

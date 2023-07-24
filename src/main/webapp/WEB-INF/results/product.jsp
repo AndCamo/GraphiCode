@@ -5,7 +5,7 @@
   Time: 01:11
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title id="page-title">Prodotto</title>
@@ -40,7 +40,7 @@
         <div class="product-details-container">
             <h4>${requestScope.product.getName()}</h4>
             <p class="product-details-price">${requestScope.product.getDiscountedPrice()}€</p>
-            <p class="product-details-description" align="justify">${requestScope.product.getDescription()}</p>
+            <p class="product-details-description">${requestScope.product.getDescription()}</p>
         </div>
 
         <div class="product-briefing-container">
@@ -108,14 +108,14 @@
                         <p id="quantity-info" class="form-info">Il numero di proposte corrisponde alla quantità di grafiche diverse (basate sullo stesso briefing) che si desidera ricevere.</p>
                         <div class="button-container">
                             <button class="button-35" onclick="validateBriefing()">Aggiungi al carello <i class="fa-solid fa-cart-plus"></i></button>
-                            <button class="button-35" onclick="location.href = 'show-catalog?filter=all'">Torna al catalogo <i class="fa-solid fa-backward"></i></button>
+                             <button  type="button" class="button-35" onclick="location.href='show-catalog?filter=all'">Torna al catalogo <i class="fa-solid fa-backward"></i></button>
                         </div>
             <%} else {%>
                 <input type="hidden" id="quantity" name="quantity" value="1">
                 <p id="alert">Il prodotto è un <span style="color: #5761F1">contenuto digitale</span>. Dopo l'acquisto arriverà una mail con il link per il download</p>
                 <div class="button-container">
-                    <button class="button-35" onclick="document.getElementById('briefing-form').submit();">Aggiungi al carello <i class="fa-solid fa-cart-plus"></i></button>
-                    <button class="button-35" onclick="location.href = 'show-catalog?filter=all'">Torna al catalogo <i class="fa-solid fa-backward"></i></button>
+                    <button class="button-35" onclick="addToCart()">Aggiungi al carello <i class="fa-solid fa-cart-plus"></i></button>
+                    <button type="button" class="button-35" onclick="location.href='show-catalog?filter=all'">Torna al catalogo <i class="fa-solid fa-backward"></i></button>
                 </div>
             <%}%>
             </form>

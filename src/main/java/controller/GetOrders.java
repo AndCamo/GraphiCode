@@ -55,7 +55,7 @@ public class GetOrders extends HttpServlet {
             request.setAttribute("type", "alert");
             request.setAttribute("msg", "Qualcosa è andato storto.");
             request.setAttribute("redirect", "/index.jsp");
-            address = "/WEB-INF/results/confirmPage.jsp";
+            address = "/index.jsp";
         }
 
         RequestDispatcher dispatcher = request.getRequestDispatcher(address);

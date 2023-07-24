@@ -45,6 +45,7 @@ CREATE TABLE Briefing(
     FOREIGN KEY (cod_prodotto) REFERENCES Prodotto(codice)
 );
 
+DROP TABLE  Recensione;
 CREATE TABLE Recensione(
     id integer not null primary key auto_increment,
     id_utente integer not null,
@@ -77,9 +78,6 @@ CREATE TABLE Pagamento (
     scadenza varchar(7) not null,
     FOREIGN KEY  (id_utente) REFERENCES Utente(id)
 );
-
-ALTER TABLE Pagamento
-    ALTER COLUMN numero_carta VARCHAR(20);
 
 DROP TABLE Ordine;
 CREATE TABLE Ordine(

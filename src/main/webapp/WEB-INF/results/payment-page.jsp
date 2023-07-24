@@ -24,16 +24,16 @@
         </div>
         <form method="post" id="payment-form"  action="do-order" class="registration-form">
             <label for="cardNumber">Numero di Carta:</label>
-            <input class="cc-number" id="cardNumber" name="cardNumber" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}"  maxlength="19" value="1234 1233 1231 1232" placeholder="xxxx xxxx xxxx xxxx">
+            <input class="cc-number" id="cardNumber" name="cardNumber" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}"  maxlength="19" placeholder="xxxx xxxx xxxx xxxx">
             <p id="card-number-info" class="form-info">Formato numero spbagliato!</p>
             <label for="cardHolder">Titolare Carta:</label>
-            <input id="cardHolder" type="text" name="cardHolder" maxlength="19" placeholder="Nome Cognome" value="Andrea Camoia">
+            <input id="cardHolder" type="text" name="cardHolder" maxlength="19" placeholder="Nome Cognome">
             <p id="card-holder-info" class="form-info">Il nome può contenere solo lettere!</p>
             <label for="expireDate">Data di Scadenza:</label>
-            <input class="cc-expires" maxlength="7" name="expireDate"  id="expireDate" pattern="\d*" placeholder="MM / YY" type="tel" value="06/25" />
+            <input class="cc-expires" maxlength="7" name="expireDate"  id="expireDate" pattern="\d*" placeholder="MM / YY" type="tel" />
             <p id="card-date-info" class="form-info">Formato Data spbagliato!</p>
             <label for="credit-cvc">Codice di sicurezza:</label>
-            <input class="cc-cvc"  id="credit-cvc" maxlength="3" name="credit-cvc" pattern="\d*" placeholder="CVC" type="tel" value="765" />
+            <input class="cc-cvc"  id="credit-cvc" maxlength="3" name="credit-cvc" pattern="\d*" placeholder="CVC" type="tel" />
             <p id="card-cvc-info" class="form-info">Formato CVC spbagliato!</p>
         </form>
         <div class="button-container">

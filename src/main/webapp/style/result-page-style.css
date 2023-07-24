@@ -54,11 +54,29 @@
 
 
 
-.redirect-container{
+.button-container{
     font-size: 1.4rem;
     justify-content: center;
     display: flex;
     color: white;
+}
+
+.button-container ul{
+    list-style: none;
+    padding-left: 0;
+    margin: 0 0 20px;
+    text-align:center;
+}
+
+.button-container ul li{
+    display:block;
+}
+.button-container a{
+    color: white;
+    transition: all .2s;
+}
+.button-container a:hover{
+    color: lightgrey;
 }
 
 .redirect-container ul{
@@ -70,6 +88,7 @@
 
 .redirect-container ul li{
     display:block;
+    color: white;
 }
 .redirect-container a{
     color: white;
@@ -78,6 +97,7 @@
 .redirect-container a:hover{
     color: lightgrey;
 }
+
 #result-title{
     font-family: 'Rubik Mono One', monospace;
     font-size: 2.5rem;

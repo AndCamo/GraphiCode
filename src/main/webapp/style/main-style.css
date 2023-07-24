@@ -9,6 +9,7 @@
     font-family: 'Rubik Mono One', monospace;
     font-size: calc(40px + 0.390625vw);
     color: #E5383B;
+    width: auto;
     margin: 0 auto;
     display: block;
 }
@@ -35,10 +36,31 @@ body {
     margin: 10vh auto 0 auto;
 }
 
+.main-title-container{
+    padding: 25px;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    margin: 15vh auto 0 auto;
+    color: #1b1b1b;
+    background-color: white;
+    border-radius: 1rem;
+    border: 4px solid #E5383B;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.main-title-container h1{
+    margin: 1.6vh auto;
+    font-family: 'Rubik Mono One', monospace;
+    color: #e5383b;
+}
+
 .main-panel{
     padding: 25px;
     display: block;
-    width: 50%;
+    width: 60%;
     margin: 2vh auto 0 auto;
     color: #141414;
     background-color: white;
@@ -48,6 +70,26 @@ body {
     box-shadow: 0 4px 14px -4px #000000;
     box-sizing: border-box;
     line-height: 2;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.main-panel p.content-text{
+    font-size: 1.3rem;
+    color: #141414;
+    margin:  0 auto 5vh auto;
+    line-height: 1.2;
+    text-align: justify;
+}
+
+.main-panel p.info-text{
+    font-size: 1.4rem;
+    color: #e5383b;
+    font-weight: 800;
+    margin:  0 auto;
+    line-height: 1.2;
+    display: block;
+    width: 100%;
 }
 
 @media all and (max-width: 1440px) and (min-width: 426px){
@@ -57,7 +99,7 @@ body {
         margin-right: 0;
     }
     .main-panel{
-        width: 60%;
+        width: 80%;
     }
 }
 
@@ -74,6 +116,10 @@ body {
         box-sizing:  border-box;
         margin: 2vh auto 0 auto;
         padding: 25px;
+    }
+
+    .main-title-container h1{
+        font-size: 2.2rem;
     }
 }
 

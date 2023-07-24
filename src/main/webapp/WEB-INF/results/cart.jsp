@@ -23,7 +23,7 @@
 <%@ include file="/navbar.jsp"%>
 <div class="main-container">
     <div class="title-container" style="display: block">
-        <h1 class="title" style="width: fit-content">Il Tuo Carrello</h1>
+        <h1 class="title">Il Tuo Carrello</h1>
     </div>
     <div id="cart-container">
         <div id="cart-item-container">
