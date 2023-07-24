@@ -59,7 +59,15 @@ public class OrderItemBean {
         this.orderNumber = orderNumber;
     }
 
-    private int id, orderNumber, quantity;
+    public int getBriefingId() {
+        return briefingId;
+    }
+
+    public void setBriefingId(int briefingId) {
+        this.briefingId = briefingId;
+    }
+
+    private int id, orderNumber, quantity, briefingId;
     String productCode;
     double price;
 }

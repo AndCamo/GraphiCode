@@ -86,6 +86,9 @@
                 <textarea style="resize: vertical;padding: 10px"  id="description" name="description" required></textarea>
                 <p id="description-info" class="form-info">Errore nel formato della descrizione</p>
 
+                <label for="personalized">È un prodotto da personalizzare?:</label><br>
+                <input type="checkbox" value="true" id="personalized" name="personalized">
+
                 <div class="label-container">
                     <label for="image" id="imageUpload" class="label-field">Immagine</label>
                     <i class="fa-solid fa-file-circle-xmark icon"></i>

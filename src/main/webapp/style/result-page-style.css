@@ -3,17 +3,56 @@
     padding: 25px;
     display: block;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
-@media all and (max-width: 380px) {
+#result-title-container{
+    width: 100%;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+@media all and (max-width: 1440px) and (min-width: 426px){
     .result-container{
-        width: 90%;
+        width: 100%;
         padding: 20px;
     }
     #result-title{
         font-size: 30px;
     }
 }
+
+@media screen and (max-width: 425px){
+    .result-container{
+        width: 100%;
+        padding: 20px;
+    }
+
+    #result-title-container{
+        width: 100%;
+        word-wrap: break-word;
+        word-break: break-word;
+    }
+    #result-title{
+        font-size: 2.3rem !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    #message-container{
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    #result-message{
+        width: 90%;
+        padding: 10px;
+        word-wrap: break-word;
+        word-break: break-word;
+    }
+}
+
+
 
 .redirect-container{
     font-size: 1.4rem;
@@ -34,13 +73,14 @@
 }
 .redirect-container a{
     color: white;
+    transition: all .2s;
 }
 .redirect-container a:hover{
     color: lightgrey;
 }
 #result-title{
     font-family: 'Rubik Mono One', monospace;
-    font-size: calc(40px + 0.390625vw);
+    font-size: 2.5rem;
     color: white;
     margin: 0 auto;
 }
@@ -69,4 +109,5 @@
 #next:hover{
     color: white;
     background-color: #e5383b;
+    transition: all .2s;
 }

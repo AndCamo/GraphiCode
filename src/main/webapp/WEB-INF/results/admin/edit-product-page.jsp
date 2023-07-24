@@ -32,7 +32,7 @@
                 <label for="productCode" class="label-field">Codice Prodotto:</label>
                 <i class="fa-sharp fa-solid fa-circle-info icon" id="code-info-icon"></i>
             </div>
-            <input type="text" id="productCode" name="productCode" placeholder="<%=product.getCode()%>" value="<%=product.getCode()%>" required>
+            <input type="text" id="productCode" name="productCode" placeholder="<%=product.getCode()%>" value="<%=product.getCode()%>" readonly required>
             <p id="code-info" class="form-info">Il codice deve avere il seguente formato: <span style="font-weight: bold">123ABC</span></p>
 
             <label for="productName">Nome Prodotto:</label><br>

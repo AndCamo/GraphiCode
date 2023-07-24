@@ -21,12 +21,12 @@
             </ul>
         </div>
     </nav>
-    <img  style="cursor: pointer;" onclick="location.href= 'index.jsp'" id="navbar-logo" src="./assets/Pittogramma.png">
+    <img  style="cursor: pointer;" onclick="location.href= 'index.jsp'" id="navbar-logo" src="./assets/main-logo.png">
     <%
         if(profile != null && profile.isAdmin()){
     %>
         <img id="navbar-cart" onclick="location.href='${pageContext.request.contextPath}/check-in?type=dashboard'" src="./assets/setting.png">
     <%} else {%>
-        <img id="navbar-cart" onclick="location.href='cart.jsp'" src="./assets/cart3.png">
+        <img id="navbar-cart" onclick="location.href='show-cart'" src="./assets/cart3.png">
     <%}%>
 </div>

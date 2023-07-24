@@ -27,11 +27,11 @@ function showMenu() {
         document.getElementsByTagName("body")[0].style.overflow = "hidden";
         $(".nav-container").fadeIn("fast");
         document.getElementById("navbar-menu-icon").src="./assets/close.png";
-        $(".card-image-container").style("overflow", "hidden");
+        $(".card-image-container").css("overflow", "hidden");
     } else {
         document.getElementsByTagName("body")[0].style.overflow = "auto";
         $(".nav-container").fadeOut("fast");
         document.getElementById("navbar-menu-icon").src="./assets/menu.png";
-        $(".card-image-container").style("overflow", "visible");
+        $(".card-image-container").css("overflow", "visible");
     }
 }

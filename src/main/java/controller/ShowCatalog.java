@@ -24,6 +24,8 @@ public class ShowCatalog extends HttpServlet {
         try {
             List<ProductBean> productList = new ArrayList<>();
             String productFilter = request.getParameter("filter");
+            if (productFilter == null)
+                productFilter = "all";
             if (productFilter.equalsIgnoreCase("all"))
                 productList = productService.doRetrieveAll();
             else

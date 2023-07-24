@@ -122,6 +122,14 @@ public class ProductBean {
         reviews.add(newReview);
     }
 
+    public boolean isPersonalized() {
+        return personalized;
+    }
+
+    public void setPersonalized(boolean personalized) {
+        this.personalized = personalized;
+    }
+
     public boolean checkProductValues() {
         final Pattern code_regex = Pattern.compile("^[A-Z]{3}[0-9]{3}$");
         final Pattern productName_regex = Pattern.compile("^[a-zA-Z0-9]+(([',. -][a-zA-Z0-9 ])?[a-zA-Z0-9]*)*$");
@@ -178,5 +186,6 @@ public class ProductBean {
     private List<ReviewBean> reviews;
     private String code, name, category, image, description;
     private int sale;
+    private boolean personalized;
     private double price;
 }

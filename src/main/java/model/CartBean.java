@@ -1,5 +1,6 @@
 package model;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +8,7 @@ public class CartBean {
 
     public CartBean() {
         productCount = 0;
+        productList = new ArrayList<>();
     };
     public CartBean(int id, int userId) {
         this.id = id;
@@ -50,37 +52,35 @@ public class CartBean {
     }
 
     public void setProductList(List<CartItemBean> productList) {
-        this.productList = productList;
-
-        for (CartItemBean tmpItem : productList)
-            this.productCount += tmpItem.getQuantity();
+        if (productList != null) {
+            this.productList = productList;
+            for (CartItemBean tmpItem : productList)
+                this.productCount += tmpItem.getQuantity();
+            productCount = productList.size();
+        } else {
+            productCount = 0;
+        }
     }
 
-    public void addProduct(String productCode, int quantity){
-
-        boolean isIn = false;
-
-        for (CartItemBean tmpItem : productList){
-            if (tmpItem.getProductCode().equals(productCode)) {
-                isIn = true; // The product is already in the cart
-                tmpItem.setQuantity(tmpItem.getQuantity() + quantity);
-            }
-        }
-
-        if (!isIn){
-            CartItemBean newCartItem = new CartItemBean(productCode, quantity, this.id);
-            productList.add(newCartItem);
-        }
-
+    public void addProduct(CartItemBean newCartItem){
+        productList.add(newCartItem);
+        productCount = productList.size();
     }
 
-    public void removeProduct(String productCode){
+    public void removeProduct(CartItemBean itemToRemove){
         for(int i = 0; i < productList.size(); i++){
-            if (productList.get(i).getProductCode().equals(productCode)) {
+            if (productList.get(i).getId() == itemToRemove.getId()) {
                 productList.remove(i);
                 break;
             }
         }
+        productCount = productList.size();
+    }
+
+    public void loadCart() throws SQLException {
+        CartItemDAO cartItemService = new CartItemDAO();
+        List<CartItemBean> itemList = cartItemService.doRetrieveByCartId(this.id);
+        this.setProductList(itemList);
     }
 
 

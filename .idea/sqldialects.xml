@@ -2,7 +2,12 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/database/crea_db.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/model/BriefingDAO.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/model/CartDAO.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/model/CartItemDAO.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/model/OrderDAO.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/model/OrderItemDAO.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/model/PaymentDAO.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/model/ProductDAO.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/model/UserDAO.java" dialect="GenericSQL" />
   </component>

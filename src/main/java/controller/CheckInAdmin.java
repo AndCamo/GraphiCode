@@ -35,6 +35,12 @@ public class CheckInAdmin extends HttpServlet {
                 case "show-user":
                     address = "/get-users";
                     break;
+                case "show-product":
+                    address = "/get-products";
+                    break;
+                case "show-order":
+                    address = "/get-order";
+                    break;
                 case "edit-user":
                     address = "/WEB-INF/results/admin/edit-user-page.jsp";
                     break;

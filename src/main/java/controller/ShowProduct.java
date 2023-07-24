@@ -21,27 +21,31 @@ public class ShowProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
+        UserBean currentUser = (UserBean) session.getAttribute("user");
         String codeToGet = (request.getParameter("productCode")) != null ? request.getParameter("productCode") : "null";
         String address = "";
 
-        if (!codeToGet.equals("null")){
+        try {
             ProductDAO productService = new ProductDAO();
-            try {
-                ProductBean product = productService.doRetrieveById(codeToGet);
+            ProductBean product = productService.doRetrieveById(codeToGet);
+            if (product != null){
                 request.setAttribute("product", product);
-                address = "/WEB-INF/results/product.jsp";
-            } catch (SQLException ex){
-                request.setAttribute("type", "sqlError");
-                request.setAttribute("msg", "Errore durante il caricamento dal database");
+                if (currentUser != null && currentUser.isAdmin())
+                    address = "/WEB-INF/results/product-info.jsp";
+                else
+                    address = "/WEB-INF/results/product.jsp";
+            } else {
+                request.setAttribute("type", "alert");
+                request.setAttribute("msg", "Qualcosa è andato storto.");
                 request.setAttribute("redirect", "/index.jsp");
                 address = "/WEB-INF/results/confirmPage.jsp";
-                ex.printStackTrace();
             }
-        } else {
-            request.setAttribute("type", "alert");
-            request.setAttribute("msg", "Qualcosa è andato storto.");
+        }catch (SQLException ex){
+            request.setAttribute("type", "sqlError");
+            request.setAttribute("msg", "Errore durante il caricamento dal database");
             request.setAttribute("redirect", "/index.jsp");
             address = "/WEB-INF/results/confirmPage.jsp";
+            ex.printStackTrace();
         }
 
         RequestDispatcher dispatcher = request.getRequestDispatcher(address);

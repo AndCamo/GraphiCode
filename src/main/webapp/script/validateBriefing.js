@@ -72,10 +72,14 @@ $("#notes-info-icon").click( function() {
     $("#notes-info").slideToggle();
 });
 
+$("#quantity-info-icon").click( function() {
+    $("#quantity-info").slideToggle();
+});
+
 
 function validateBriefing(){
     if (validateTarget() & validateStyle() &
         validateGoals() & validateNote()){
-        return true;
+            document.getElementById("briefing-form").submit();
     }
 }

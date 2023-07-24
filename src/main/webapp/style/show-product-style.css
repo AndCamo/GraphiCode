@@ -128,4 +128,17 @@ textarea{
         margin: 0;
         width: 100%;
     }
+
+    .product-image-container{
+        width: 90%;
+    }
+
+    .product-details-container{
+        padding: 0;
+        width: 90%;
+    }
+    .product-details-container h4{
+        margin-top: 4vh;
+        line-height: 1.2
+    }
 }

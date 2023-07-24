@@ -1,0 +1,155 @@
+#main-banner{
+    margin: 15vh auto 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    border-radius: 16px;
+    border: 5px solid white;
+    -webkit-box-shadow: 0 4px 14px -4px #000000;
+    box-shadow: 0 4px 14px -4px #000000;
+    box-sizing: border-box;
+}
+
+#banner-image{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: left;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#banner-image img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    transition: all 0.3s;
+}
+
+#banner-text{
+    width: 45%;
+}
+
+#banner-text p {
+    font-size: 1.4rem;
+    color: white;
+    margin: 0;
+    text-align: justify-all;
+}
+
+.dim-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.dim-image img{
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    transition: all 0.3s;
+}
+
+.dim-image:hover img{
+    transform: scale(1.1);
+}
+
+.dim-image{
+    width: 45%;
+    display: block;
+    margin: 3vh auto;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.dim-text-container{
+    margin: 3vh auto;
+    width: 45%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+.dim-title{
+    font-family: 'Rubik Mono One', monospace;
+    font-size: 2rem;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #5761F1;
+    width: 100%;
+    border-radius: 16px;
+    text-decoration: underline;
+    margin: 2vh auto;
+    display: block;
+}
+
+.dim-text{
+    font-size: 1.3rem;
+    line-height: 1.1;
+    color: white;
+}
+
+.dim-button{
+    font-size: 1.4rem;
+    color: white;
+    font-weight: 900;
+    background-color: #e5383b;
+    border-radius: 16px;
+    padding: 5px 10px;
+    box-sizing: content-box;
+    display: inline;
+}
+
+p.dim-button a{
+    color: white;
+}
+
+span.highlight{
+    font-weight: 900;
+    background-color: #e5383b;
+}
+
+
+@media screen and (max-width: 768px){
+    #main-banner{
+        display: block;
+        padding: 10px;
+        box-sizing: border-box;
+        word-wrap: break-word;
+    }
+    #banner-image{
+        display: inline;
+    }
+    #banner-image img{
+        margin-bottom: 5vh;
+    }
+    #banner-text{
+        display: inline;
+    }
+
+    .dim-container{
+        display: block;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .dim-image{
+        display: inline;
+        width: 100%;
+    }
+
+    .dim-text-container{
+        display: inline;
+        width: 100%;
+    }
+    .dim-button{
+        display: block;
+    }
+
+    .dim-image{
+        display: block;
+        margin: 3vh auto;
+    }
+}

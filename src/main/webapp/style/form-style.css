@@ -16,6 +16,14 @@ img.preview {
     display: block; /* remove extra space below image */
 }
 
+
+.registration-form{
+    font-family: 'Roboto Mono', monospace;
+    font-size: calc(14px + 0.390625vw);
+    margin: 0 auto;
+    width: 70%;
+}
+
 .form-container{
     padding: 25px;
     display: block;
@@ -101,10 +109,10 @@ img.preview {
     .form-info{
         font-size: calc(14px + 0.390625vw);
     }
-    form.registration-form{
+    .registration-form{
         font-size: calc(15px + 0.390625vw);
-        margin: 0;
-        width: 100%;
+        margin: 0 auto !important;
+        width: 90% !important;
     }
 
     .form-subtitle{
@@ -129,7 +137,7 @@ img.preview {
 
 @media all and (max-width: 1440px) and (min-width: 426px){
     .form-container{
-        width: 70%;
+        width: 80%;
     }
 
     #image-preview{
@@ -159,13 +167,6 @@ img.preview {
     font-size: calc(14px + 0.390625vw);
     margin: 0;
     display: block;
-}
-
-form.registration-form{
-    font-family: 'Roboto Mono', monospace;
-    font-size: calc(14px + 0.390625vw);
-    margin: 0 auto;
-    width: 70%;
 }
 
 .button-35 {

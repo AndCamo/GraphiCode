@@ -25,7 +25,7 @@
     <div class="main-panel">
         <p class="info-text"><span class="info-header">Codice:</span> ${requestScope.product.getCode()}</p>
         <p class="info-text"><span class="info-header">Nome:</span> ${requestScope.product.getName()}</p>
-        <p class="info-text"><span class="info-header">Prezzo:</span> ${requestScope.product.getPrice()}</p>
+        <p class="info-text"><span class="info-header">Prezzo:</span> ${requestScope.product.getPrice()}€</p>
         <p class="info-text"><span class="info-header">Sconto:</span> ${requestScope.product.getSale()}</p>
         <p class="info-text"><span class="info-header">Categoria:</span> ${requestScope.product.getCategory()}</p>
         <p class="info-text"><span class="info-header">Descrizione:</span> <span style="display: block">${requestScope.product.getDescription()}</span></p>

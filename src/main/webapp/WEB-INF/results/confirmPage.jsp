@@ -34,7 +34,7 @@
 
     <div class="main-container">
       <div class="result-container">
-        <div id="result-title-containter">
+        <div id="result-title-container">
           <h2 id="result-title">
             <%
               String type = (String) request.getAttribute("type");
@@ -43,21 +43,23 @@
               Ciao, ${sessionScope.user.getName()}!
             <%} else if (type.equals("alert")){%>
               Attenzione!
-            <%} else if (type.equals("success-add") || type.equals("success-edit")){%>
+            <%} else if (type.startsWith("success")){%>
               Operazione confermata
             <%} else{%>
             Errore!
             <%}%>
           </h2>
         </div>
-        <h3 id="result-message">${requestScope.msg}</h3>
+        <div id="message-container">
+          <h3 id="result-message">${requestScope.msg}</h3>
+        </div>
+
         <div class="redirect-container">
           <ul>
             <li><p id="next" onclick="location.href='${pageContext.request.contextPath}' + '${requestScope.redirect}'">Procedi</p></li>
             <li><p id="timer">10</p></li>
           </ul>
         </div>
-
       </div>
     </div>
   </body>

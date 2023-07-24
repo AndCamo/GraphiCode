@@ -1,7 +1,7 @@
 package model;
 
 public class CartItemBean {
-    private int id, cartId, quantity;
+    private int id, cartId, quantity, briefingId;
     private String productCode;
 
     public CartItemBean() {};
@@ -48,5 +48,13 @@ public class CartItemBean {
 
     public void setProductCode(String productCode) {
         this.productCode = productCode;
+    }
+
+    public int getBriefingId() {
+        return briefingId;
+    }
+
+    public void setBriefingId(int briefingId) {
+        this.briefingId = briefingId;
     }
 }

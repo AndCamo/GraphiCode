@@ -6,13 +6,11 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.CartBean;
-import model.CartDAO;
-import model.UserBean;
-import model.UserDAO;
+import model.*;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -26,20 +24,26 @@ public class Login extends HttpServlet {
         boolean matchFlag = true;
         Matcher matcher = null;
 
-        String eMail = request.getParameter("email");
-        matcher = email_regex.matcher(eMail);
-        if (!matcher.find() || eMail.isEmpty()){
-            matchFlag = false;
-            System.out.println("SBAGLIATA EMAIL");
-        }
-        String password = request.getParameter("password");
 
-        matcher = password_regex.matcher(password);
-        if (!matcher.find() || password.isEmpty()){
+
+        String eMail = request.getParameter("email");
+        String password = request.getParameter("password");
+        if (eMail == null || password == null){
             matchFlag = false;
-            System.out.println(password);
-            System.out.println("SBAGLIATA PASS");
+        } else {
+            matcher = email_regex.matcher(eMail);
+            if (!matcher.find() || eMail.isEmpty()){
+                matchFlag = false;
+                System.out.println("SBAGLIATA EMAIL");
+            }
+            matcher = password_regex.matcher(password);
+            if (!matcher.find() || password.isEmpty()){
+                matchFlag = false;
+                System.out.println(password);
+                System.out.println("SBAGLIATA PASS");
+            }
         }
+
 
         String address = "";
         UserDAO service = new UserDAO();
@@ -52,12 +56,24 @@ public class Login extends HttpServlet {
                     request.setAttribute("redirect", "/index.jsp");
                     address = "/WEB-INF/results/confirmPage.jsp";
                     request.getSession().setAttribute("user", user);
-
                     //AGGIUNGI CARRELLO
-
-                    CartDAO cartService = new CartDAO();
-                    CartBean newCart = cartService.doRetrieveByUserID(user.getId());
-                    request.getSession().setAttribute("cart", newCart);
+                    if (!user.isAdmin()){
+                        CartBean newCart = (CartBean) request.getSession().getAttribute("cart");
+                        CartDAO cartService = new CartDAO();
+                        CartBean userCart = cartService.doRetrieveByUserID(user.getId());
+                        if (userCart == null){
+                            userCart = new CartBean(user.getId());
+                            cartService.doSave(userCart);
+                        }
+                        if(newCart == null) {
+                            userCart.loadCart();
+                        } else {
+                            List<CartItemBean> newCartItems = newCart.getProductList();
+                            cartService.doDeleteById(newCart.getId());
+                            userCart.setProductList(newCartItems);
+                        }
+                        request.getSession().setAttribute("cart", userCart);
+                    }
                 } else {
                     request.setAttribute("type", "login-error");
                     request.setAttribute("msg", "Credenziali sbagliate!");

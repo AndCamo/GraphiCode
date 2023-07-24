@@ -52,6 +52,11 @@
     color: white;
 }
 
+.col-label{
+    font-weight: bolder;
+    display: none;
+}
+
 
 
 
@@ -81,5 +86,13 @@
         display: flex;
         justify-content: center;
         margin: 0;
+    }
+
+    .col-label{
+        display: inline;
+    }
+
+    .col-text{
+        float: right;
     }
 }

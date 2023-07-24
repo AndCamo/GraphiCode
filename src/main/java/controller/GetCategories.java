@@ -1,12 +1,12 @@
 package controller;
 
-import com.google.gson.Gson;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.ProductDAO;
+import org.json.JSONArray;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -24,8 +24,8 @@ public class GetCategories extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             List<String> categories = productService.doRetrieveCategories();
-            String jsonList = new Gson().toJson(categories);
-            out.write(jsonList);
+            JSONArray jsonList = new JSONArray(categories);
+            out.write(jsonList.toString());
         } catch (SQLException e) {
             out.write("sqlError");
             throw new RuntimeException(e);

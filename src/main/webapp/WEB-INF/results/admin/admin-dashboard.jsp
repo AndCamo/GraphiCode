@@ -21,11 +21,11 @@
             <img class="image-card" src="${pageContext.request.contextPath}/assets/user.png">
             <p class="text-card">Gestione Utenti</p>
         </div>
-        <div class="action-card" onclick="location.href='${pageContext.request.contextPath}/get-products'">
+        <div class="action-card" onclick="location.href='${pageContext.request.contextPath}/check-in?type=show-product'">
             <img class="image-card" src="${pageContext.request.contextPath}/assets/box.png">
             <p class="text-card">Gestione Prodotti</p>
         </div>
-        <div class="action-card">
+        <div class="action-card" onclick="location.href='${pageContext.request.contextPath}/check-in?type=show-order'">
             <img class="image-card" src="${pageContext.request.contextPath}/assets/purchase-order.png">
             <p class="text-card">Gestione Ordini</p>
         </div>

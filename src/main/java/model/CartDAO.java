@@ -25,8 +25,18 @@ public class CartDAO {
     {
         Connection con = ConnectionPool.getConnection();
         PreparedStatement ps = con.prepareStatement(
-                "DELETE FROM Carrello WHERE Utente=?");
+                "DELETE FROM Carrello WHERE id_utente=?");
         ps.setInt(1, userId);
+        ps.executeUpdate();
+        ConnectionPool.closeConnection();
+    }
+
+    public void doDeleteById(int cartId) throws SQLException
+    {
+        Connection con = ConnectionPool.getConnection();
+        PreparedStatement ps = con.prepareStatement(
+                "DELETE FROM Carrello WHERE id=?");
+        ps.setInt(1, cartId);
         ps.executeUpdate();
         ConnectionPool.closeConnection();
     }

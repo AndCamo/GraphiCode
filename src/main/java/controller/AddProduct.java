@@ -35,6 +35,10 @@ public class AddProduct extends HttpServlet {
             int sale = Integer.parseInt(request.getParameter("productSale"));
             String catergory = request.getParameter("category");
             String description = request.getParameter("description");
+            String personalized = request.getParameter("personalized");
+            System.out.println(personalized);
+            boolean isPersonalized = (personalized != null);
+            System.out.println(isPersonalized);
 
             Part part = request.getPart("image");
             String subpath;
@@ -49,6 +53,7 @@ public class AddProduct extends HttpServlet {
             }
             ProductBean newProduct = new ProductBean(productCode, name, catergory, subpath, description, price);
             newProduct.setSale(sale);
+            newProduct.setPersonalized(isPersonalized);
 
             try {
                 boolean matchflag = newProduct.checkProductValues();

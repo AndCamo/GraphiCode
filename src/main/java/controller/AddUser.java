@@ -34,28 +34,35 @@ public class AddUser extends HttpServlet {
         String eMail = request.getParameter("email");
         String password = request.getParameter("password");
 
-        UserBean newUser = new UserBean(userName, userSurname,
-                eMail, password, phoneNumber, nation, birthDate);
-
-        boolean matchFlag = newUser.checkUserData();
-        Matcher matcher = null;
-
-        final Pattern email_regex = Pattern.compile("^[a-zA-Z\\d._%-]+@[a-zA-Z\\d.-]+\\.[a-zA-Z]{2,20}$");
-        matcher = email_regex.matcher(eMail);
-        if (!matcher.find() || eMail.isEmpty()){
-            matchFlag = false;
-            System.out.println("SBAGLIATA EMAIL");
-        }
-        final Pattern password_regex = Pattern.compile("^(?=.*[A-Z])(?=.*\\d)(?=.*[^\\w\\s]).+$");
-        matcher = password_regex.matcher(password);
-        if (!matcher.find() || password.isEmpty()){
-            matchFlag = false;
-            System.out.println(password);
-            System.out.println("SBAGLIATA PASS");
-        }
-
         String address = "";
         UserDAO service = new UserDAO();
+        Matcher matcher = null;
+
+        boolean matchFlag = true;
+        UserBean newUser = null;
+
+        if (eMail == null || password == null) {
+            matchFlag = false;
+        } else {
+            final Pattern email_regex = Pattern.compile("^[a-zA-Z\\d._%-]+@[a-zA-Z\\d.-]+\\.[a-zA-Z]{2,20}$");
+            matcher = email_regex.matcher(eMail);
+            if (!matcher.find() || eMail.isEmpty()){
+                matchFlag = false;
+                System.out.println("SBAGLIATA EMAIL");
+            }
+            final Pattern password_regex = Pattern.compile("^(?=.*[A-Z])(?=.*\\d)(?=.*[^\\w\\s]).+$");
+            matcher = password_regex.matcher(password);
+            if (!matcher.find() || password.isEmpty()){
+                matchFlag = false;
+                System.out.println(password);
+                System.out.println("SBAGLIATA PASS");
+            }
+
+            newUser = new UserBean(userName, userSurname,
+                    eMail, password, phoneNumber, nation, birthDate);
+
+            matchFlag = newUser.checkUserData();
+        }
 
         try {
             if (matchFlag){

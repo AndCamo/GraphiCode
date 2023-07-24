@@ -10,17 +10,17 @@ public class OrderBean {
         orderItemList = new ArrayList<>();
     }
 
-    public OrderBean(int orderNumber, int userId, String cardNumber, String orderDate, double totalAmount){
+    public OrderBean(int orderNumber, int userId, int paymentID, String orderDate, double totalAmount){
         this.orderNumber = orderNumber;
         this.userId = userId;
-        this.cardNumber = cardNumber;
+        this.paymentID = paymentID;
         this.setOrderDate(orderDate);
         this.totalAmount = totalAmount;
     }
 
-    public OrderBean(int userId, String cardNumber, String orderDate, double totalAmount){
+    public OrderBean(int userId, int paymentID, String orderDate, double totalAmount){
         this.userId = userId;
-        this.cardNumber = cardNumber;
+        this.paymentID = paymentID;
         this.setOrderDate(orderDate);
         this.totalAmount = totalAmount;
     }
@@ -33,12 +33,12 @@ public class OrderBean {
         this.orderNumber = orderNumber;
     }
 
-    public String getCardNumber() {
-        return cardNumber;
+    public int getPaymentID() {
+        return paymentID;
     }
 
-    public void setCardNumber(String cardNumber) {
-        this.cardNumber = cardNumber;
+    public void setPaymentID(int paymentID) {
+        this.paymentID = paymentID;
     }
 
     public int getUserId() {
@@ -74,7 +74,7 @@ public class OrderBean {
     }
 
     private int orderNumber, userId;
-    private String cardNumber;
+    private int paymentID;
     private LocalDate orderDate;
     private double totalAmount;
     private List<OrderItemBean> orderItemList;
