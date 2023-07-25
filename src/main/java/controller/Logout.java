@@ -35,7 +35,6 @@ public class Logout extends HttpServlet {
                     throw new RuntimeException(e);
                 }
             }
-            // SALVARE TUTTI I CARTITEM CON UN FOR
         }
         session.invalidate();
         RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
