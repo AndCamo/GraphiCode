@@ -33,6 +33,7 @@
             <p class="info-text" style="background-color: #e5383b; color: white"><span class="info-header">Prodotti(${requestScope.orderItems.size()}):</span></p>
             <div class="order-item-list">
                 <%
+                    UserBean currentUser = (UserBean) request.getSession().getAttribute("user");
                     List<OrderItemBean> orderItems = (List<OrderItemBean>) request.getAttribute("orderItems");
                     for (OrderItemBean tmpItem : orderItems) {
                 %>
@@ -40,7 +41,9 @@
                         <p class="info-text"><span class="info-header">Prodotto:</span> <%=tmpItem.getProductCode()%></p>
                         <p class="info-text"><span class="info-header">Quantità:</span> <%=tmpItem.getQuantity()%></p>
                         <p class="info-text"><span class="info-header">Costo:</span> <%=tmpItem.getPrice()%></p>
-                        <p class="info-text info-button"><span class="info-header"><a href="show-orderitem-info?orderItemId=<%=tmpItem.getId()%>">Info</a></span></p>
+                        <%if (currentUser != null && currentUser.isAdmin()) {%>
+                            <p class="info-text info-button"><span class="info-header"><a href="show-orderitem-info?orderItemId=<%=tmpItem.getId()%>">Info</a></span></p>
+                        <%}%>
                     </div>
                 <%}%>
             </div>
